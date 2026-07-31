@@ -1,30 +1,15 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="UTF-8">
-	<?php if (is_home() || is_front_page()) : ?>
-		<title>Avispa</title>
-
-	<?php else : ?>
-		<title><?php echo trim(wp_title('', false)); ?> | Avispa</title>
-	<?php endif; ?>
-
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
-	<!-- <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico"> -->
-
-	<?php wp_head(); ?>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style_pc.css?_<?php microtime(); ?>">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style_mobile.css?_<?php microtime(); ?>">
-
-	<script src="<?php echo get_template_directory_uri(); ?>/jquery.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/common.js"></script>
+<?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 	<header class="site-header">
 
 		<!-- Header Top -->
@@ -33,13 +18,13 @@
 
 				<!-- Logo -->
 				<div class="logo-area">
-					<a href="#" class="logo">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/logo-avispa.webp" alt="logo-avispa">
+					<a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/logo/logo-avispa.webp" alt="logo-avispa">
 					</a>
 
-					<div href="#" class="logo1">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/logo-NAYBee.webp" alt="logo-NAYBee">
-					</div>
+					<a href="#" class="logo1">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/logo/logo-NAYBee.webp" alt="logo-NAYBee">
+					</a>
 				</div>
 
 
@@ -55,8 +40,16 @@
 					</a>
 
 					<a href="#" class="icon-btn">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/account.webp" alt="account">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/account.webp" alt="ticket">
 					</a>
+
+					<a href="#" class="mobile-partner-logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/logo/logo-NAYBee.webp" alt="TEAM NAYBEE">
+					</a>
+
+					<button class="mobile-menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+						<span></span><span></span><span></span>
+					</button>
 
 				</div>
 
@@ -64,8 +57,8 @@
 		</div>
 
 		<div class="main-logo">
-			<a href="#">
-				<img src="<?= get_template_directory_uri(); ?>/images/logo_main.webp" alt="logo_main">
+			<a href="<?php echo esc_url(home_url('/')); ?>">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/logo/logo_main.webp" alt="logo_main">
 			</a>
 		</div>
 
@@ -74,19 +67,22 @@
 		<div class="header-bottom">
 			<nav class="main-nav">
 				<ul class="ul_left">
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">NEWS</a></li>
-					<li><a href="#">MATCH</a></li>
-					<li><a href="#">TEAM</a></li>
-					<li><a href="#">TICKET</a></li>
+					<li class="menu-ticket"><a href="#" data-mobile-label="チケット">TICKET</a></li>
+					<li class="menu-match"><a href="#" data-mobile-label="試合・練習">MATCH</a></li>
+					<li class="menu-team"><a href="#" data-mobile-label="選手・クラブ">TEAM</a></li>
+					<li class="menu-home"><a href="#" data-mobile-label="ホーム">HOME</a></li>
+					<li class="menu-news"><a href="#" data-mobile-label="ニュース">NEWS</a></li>
 				</ul>
 				<ul class="ul_right">
-					<li><a href="#">FAN</a></li>
-					<li><a href="#">ACADEMY</a></li>
-					<li><a href="#">PARTNER</a></li>
-					<li><a href="#">SUPPORT</a></li>
+					<li class="menu-fan"><a href="#" data-mobile-label="ファン">FAN</a></li>
+					<li class="menu-academy"><a href="#" data-mobile-label="アカデミー">ACADEMY</a></li>
+					<li class="menu-support"><a href="#" data-mobile-label="サポート">SUPPORT</a></li>
+					<li class="menu-partner"><a href="#" data-mobile-label="パートナー">PARTNER</a></li>
 				</ul>
 			</nav>
+			<div class="mobile-nav-scrollbar" aria-hidden="true">
+				<span class="mobile-nav-scrollbar-thumb"></span>
+			</div>
 
 		</div>
 

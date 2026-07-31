@@ -1,5 +1,5 @@
-<?php get_header(); ?>
-
-<main>archive page</main>
-
-<?php get_footer(); ?>
+<?php
+/** Posts listing template. @package Avispa */
+get_header();
+get_template_part('template-parts/posts', 'listing');
+get_footer();

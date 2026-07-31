@@ -1,5 +1,3 @@
-<?php get_header(); ?>
-
-<main>category page</main>
-
-<?php get_footer(); ?>
+<?php
+/** Category archive template. @package Avispa */
+require get_template_directory() . '/archive.php';

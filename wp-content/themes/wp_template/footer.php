@@ -1,6 +1,6 @@
 <footer class="site-footer">
     <?php get_template_part('template-parts/footer/sns'); ?>
-    <?php get_template_part('template-parts/footer/news', 'slider'); ?>
+    <?php get_template_part('template-parts/footer/banner', 'slider'); ?>
     <a class="footer-page-top" href="#"><span class="footer-page-top__icon" aria-hidden="true"></span><span>ページの先頭へもどる</span></a>
     <div class="footer-main">
         <div class="footer-container">

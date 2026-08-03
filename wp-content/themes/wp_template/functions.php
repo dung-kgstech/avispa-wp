@@ -57,11 +57,12 @@ function avispa_enqueue_assets() {
     wp_enqueue_style('avispa-header', $theme_uri . '/css/header.css', array('avispa-base'), filemtime($theme_dir . '/css/header.css'));
     wp_enqueue_style('avispa-footer', $theme_uri . '/css/footer.css', array('avispa-base'), filemtime($theme_dir . '/css/footer.css'));
 
+    wp_enqueue_script('avispa-common', $theme_uri . '/common.js', array('jquery'), filemtime($theme_dir . '/common.js'), true);
+
     if (is_front_page()) {
         wp_enqueue_style('avispa-home', $theme_uri . '/css/home.css', array('avispa-base'), filemtime($theme_dir . '/css/home.css'));
+        wp_enqueue_script('avispa-home', $theme_uri . '/home.js', array('avispa-common'), filemtime($theme_dir . '/home.js'), true);
     }
-
-    wp_enqueue_script('avispa-common', $theme_uri . '/common.js', array('jquery'), filemtime($theme_dir . '/common.js'), true);
 }
 add_action('wp_enqueue_scripts', 'avispa_enqueue_assets');
 

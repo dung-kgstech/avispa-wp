@@ -31,6 +31,18 @@ $partner_cards = array(
 );
 ?>
 <section class="home-partners" aria-labelledby="home-partners-title">
+    <?php
+    $partner_top_path = get_template_directory() . '/images/home/partner_back_top.webp';
+    $partner_top_url = get_template_directory_uri() . '/images/home/partner_back_top.webp';
+    ?>
+    <img
+        class="home-partners__top-background"
+        src="<?php echo esc_url($partner_top_url . '?ver=' . filemtime($partner_top_path)); ?>"
+        alt=""
+        width="2880"
+        height="300"
+        loading="lazy"
+    >
     <div class="site-container home-partners__inner">
         <header class="home-partners__header">
             <h2 id="home-partners-title">PARTNERS</h2>
@@ -54,12 +66,11 @@ $partner_cards = array(
         </ul>
 
         <a class="home-partners__button" href="#">パートナー一覧を見る</a>
-
         <div class="partner-stories" data-partner-slider>
             <button class="partner-stories__arrow partner-stories__arrow--prev" type="button" aria-label="Previous partner stories">‹</button>
             <div class="partner-stories__viewport">
                 <div class="partner-stories__track">
-                    <?php foreach ($partner_cards as $index => $partner_card) : ?>
+                    <?php foreach ($partner_cards as $partner_card) : ?>
                         <?php
                         $partner_video_path = get_template_directory() . '/images/logo/' . $partner_card['image'];
                         $partner_video_url = get_template_directory_uri() . '/images/logo/' . $partner_card['image'];
@@ -77,10 +88,5 @@ $partner_cards = array(
             <button class="partner-stories__arrow partner-stories__arrow--next" type="button" aria-label="Next partner stories">›</button>
         </div>
 
-        <div class="partner-stories__dots" aria-hidden="true">
-            <?php foreach ($partner_cards as $index => $partner_card) : ?>
-                <span<?php echo 0 === $index ? ' class="is-active"' : ''; ?>></span>
-            <?php endforeach; ?>
-        </div>
     </div>
 </section>

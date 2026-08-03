@@ -6,6 +6,16 @@
  */
 
 get_header();
+
+$home_sections = array(
+    'ticket',
+    'fanclub-guide',
+    'news',
+    'movie',
+    'top-team',
+    'goods',
+    'partners',
+);
 ?>
 
 <main id="primary" class="site-main home-page">
@@ -31,46 +41,9 @@ get_header();
         <?php endwhile; ?>
     <?php endif; ?>
 
-    <section class="home-news" aria-labelledby="latest-news-title">
-        <div class="site-container">
-            <?php
-            $posts_page_id = (int) get_option('page_for_posts');
-            $news_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('/news/');
-            ?>
-            <div class="section-heading">
-                <div>
-                    <p class="section-heading__eyebrow"><?php esc_html_e('LATEST', 'avispa'); ?></p>
-                    <h2 id="latest-news-title"><?php esc_html_e('News', 'avispa'); ?></h2>
-                </div>
-                <a class="section-heading__link" href="<?php echo esc_url($news_url); ?>">
-                    <?php esc_html_e('View all', 'avispa'); ?>
-                </a>
-            </div>
-
-            <?php
-            $latest_news = new WP_Query(array(
-                'post_type' => 'post',
-                'posts_per_page' => 6,
-                'ignore_sticky_posts' => true,
-            ));
-            ?>
-
-            <?php if ($latest_news->have_posts()) : ?>
-                <div class="post-grid">
-                    <?php while ($latest_news->have_posts()) : $latest_news->the_post(); ?>
-                        <?php get_template_part('template-parts/content', 'card'); ?>
-                    <?php endwhile; ?>
-                </div>
-            <?php else : ?>
-                <?php get_template_part('template-parts/content', 'none'); ?>
-            <?php endif; ?>
-            <?php wp_reset_postdata(); ?>
-        </div>
-    </section>
-
-    <?php get_template_part('template-parts/home/goods'); ?>
-
-    <?php get_template_part('template-parts/home/partners'); ?>
+    <?php foreach ($home_sections as $home_section) : ?>
+        <?php get_template_part('template-parts/home/' . $home_section); ?>
+    <?php endforeach; ?>
 </main>
 
 <?php get_footer(); ?>

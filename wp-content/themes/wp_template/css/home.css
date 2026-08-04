@@ -1,38 +1,103 @@
 /* Homepage styles: consolidated from all homepage sections. */
 /* Source: home.css */
 /* Front page */
-.home-hero {
-    min-height: 440px;
+.home-banner {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    padding: 14px 0 18px;
+    overflow: hidden;
+    background: #00143c;
+}
+
+.home-banner__stage {
+    position: relative;
+    width: 100%;
+    height: 36.15vw;
+}
+
+.home-banner__slide {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 75vw;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%);
+    transition: opacity .45s ease, transform .45s ease, filter .45s ease;
+}
+
+.home-banner__slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-banner__slide.is-active {
+    z-index: 2;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%);
+}
+
+.home-banner__slide.is-prev,
+.home-banner__slide.is-next {
+    z-index: 1;
+    opacity: 1;
+    filter: brightness(.22);
+}
+
+.home-banner__slide.is-prev {
+    transform: translateX(-150%) scale(.85);
+    transform-origin: right center;
+}
+
+.home-banner__slide.is-next {
+    transform: translateX(50%) scale(.85);
+    transform-origin: left center;
+}
+
+.home-banner__thumbnails {
     display: grid;
-    place-items: center;
-    color: #fff;
-    background: linear-gradient(135deg, #001a55, #003d7c 55%, #00a7bf)
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 8px;
+    width: 75vw;
+    margin: 10px auto 0;
 }
 
-.home-hero__inner {
-    padding-block: 88px;
-    text-align: center
+.home-banner__thumbnail {
+    padding: 0;
+    overflow: hidden;
+    aspect-ratio: 2.075 / 1;
+    border: 2px solid transparent;
+    background: #fff;
+    cursor: pointer;
+    opacity: .75;
+    transition: opacity .2s ease, border-color .2s ease, transform .2s ease;
 }
 
-.home-hero__eyebrow,
-.section-heading__eyebrow {
-    margin: 0 0 8px;
-    color: #00a9c0;
-    font-weight: 800;
-    letter-spacing: .12em
+.home-banner__thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.home-hero__title {
-    margin: 0;
-    font-size: clamp(42px, 7vw, 88px);
-    line-height: 1
+.home-banner__thumbnail:hover,
+.home-banner__thumbnail.is-active {
+    border-color: #00a7b8;
+    opacity: 1;
+    transform: translateY(-2px);
 }
 
-.home-hero__lead {
-    margin: 18px 0 0;
-    font-size: clamp(16px, 2vw, 24px)
+h2 {
+    font-family: "peckham-press", "Arial Black", sans-serif;
 }
-
 .home-content {
     padding-block: clamp(48px, 7vw, 96px)
 }
@@ -50,20 +115,470 @@
     font-size: 50px;
 }
 
+/* Match and standings */
+.home-match {
+    color: #000047;
+    background: #fff;
+    font-family: "Noto Sans JP", "NotoSansJP", sans-serif;
+}
+
+.home-match__inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+}
+
+.home-match__panel {
+    position: relative;
+    min-width: 0;
+    min-height: 620px;
+    overflow: hidden;
+}
+
+.home-match__fixtures {
+    padding: 0 0 34px;
+    background: url("../images/match/match_back.webp") center / 100% 100% no-repeat;
+}
+
+.home-match__tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.home-match__tab {
+    min-height: 80px;
+    border: 0;
+    color: #fff;
+    background: #00a7b8;
+    font-family: "peckham-press", "Arial Black", sans-serif;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.home-match__tab.is-active,
+.home-match__tab[aria-selected="true"] {
+    color: #02a6bb;
+    background: #fff;
+}
+
+.home-match__tab-panel[hidden] {
+    display: none;
+}
+
+.home-match__tab-panel.is-active {
+    display: block;
+}
+
+.match-carousel {
+    position: relative;
+    margin-top: 28px;
+}
+
+.match-carousel__viewport {
+    width: 376px;
+    height: 422px;
+    margin-inline: auto;
+    overflow: visible;
+    box-shadow: 0 8px 22px rgba(0, 0, 50, .12);
+}
+
+.match-carousel__track {
+    display: flex;
+    gap: 24px;
+    transition: transform .35s ease;
+}
+
+.match-card {
+    display: flex;
+    flex: 0 0 376px;
+    flex-direction: column;
+    min-width: 0;
+    width: 376px;
+    height: 422px;
+    background: #fff;
+    text-align: center;
+}
+
+.match-card__competition {
+    margin: 0;
+    padding: 10px 12px;
+    color: #fff;
+    background: #050047;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.match-card__date {
+    font-family: "din-condensed-bold", "DIN Condensed", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.match-card__date strong {
+    font-family: inherit;
+    font-size: 83px;
+}
+
+.match-card__teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.match-card__teams img,
+.match-card__venue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 18px;
+    font-size: 12px;
+}
+
+.match-card__venue span {
+    padding: 7px 15px;
+    color: #fff;
+    background: #00205c;
+    font-weight: 800;
+}
+
+.match-card__links {
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 14px 22px;
+}
+
+.match-card__links a {
+    padding: 10px 14px;
+    border: 2px solid #00347f;
+    color: #00205c;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.match-carousel__arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    color: #fff;
+    background: #00a7b8;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.match-carousel__arrow--prev {
+    left: 0;
+}
+
+.match-carousel__arrow--next {
+    right: 0;
+}
+
+.latest-match-card {
+    width: min(90%, 580px);
+    margin: 28px auto 0;
+    padding-bottom: 24px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(0, 0, 50, .12);
+    text-align: center;
+}
+
+.latest-match-card__competition {
+    margin: 0;
+    padding: 8px 12px;
+    color: #fff;
+    background: #00246d;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.latest-match-card__date {
+    margin: 14px 0 0;
+    font-weight: 700;
+}
+
+.latest-match-card__date strong {
+    font-family: "peckham-press", "Arial Black", sans-serif;
+    font-size: 32px;
+}
+
+.latest-match-card__result {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+    padding: 0 30px;
+}
+
+.latest-match-card__result img,
+.latest-match-card__opponent {
+    width: 86px;
+    height: 86px;
+    margin-inline: auto;
+    object-fit: contain;
+}
+
+.latest-match-card__score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.latest-match-card__score strong {
+    font-family: "peckham-press", "Arial Black", sans-serif;
+    font-size: 54px;
+    line-height: 1;
+}
+
+.latest-match-card__score span {
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.latest-match-card__opponent {
+    display: grid;
+    place-items: center;
+    clip-path: polygon(50% 0, 92% 20%, 84% 78%, 50% 100%, 16% 78%, 8% 20%);
+    color: #fff;
+    background: linear-gradient(145deg, #12a64a 0 48%, #eac800 48% 68%, #d62635 68%);
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.latest-match-card__venue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.latest-match-card__venue span {
+    padding: 5px 14px;
+    color: #fff;
+    background: #00246d;
+    font-weight: 800;
+}
+
+.home-match__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    margin: 28px auto 0;
+    border-radius: 999px;
+    color: #fff;
+    background: #00a7b8;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+
+
+.home-match__standings {
+    background: #003d92;
+}
+
+.home-match__standings-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.15) contrast(1.05);
+}
+
+.home-match__standings::after {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 33, 116, .35);
+    content: "";
+}
+
+.home-match__standings-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 620px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #fff;
+}
+
+.standings-header {
+    text-align: center;
+}
+
+.standings-header h2 {
+    padding-top: 25px;
+    font-family: "peckham-press", "Arial Black", sans-serif;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.standings-header u {
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    text-underline-offset: 5px;
+}
+
+.standings-table th{
+    font-size: 21px;
+}
+
+.standings-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.standings-summary>strong {
+    font-size: 58px;
+    line-height: 1;
+}
+
+.standings-summary small {
+    font-size: .45em;
+}
+
+.standings-summary p {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #fff;
+    font-size: 22px;
+}
+
+.standings-summary b {
+    display: flex;
+    align-items: baseline;
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+.standings-summary b:not(:last-child) {
+    color: #001b62;
+    background: #fff;
+}
+
+.standings-summary b:last-child {
+    color: #fff;
+    background: rgba(0, 27, 98, .55);
+}
+
+.standings-date {
+    margin: 18px 0 18px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.standings-summary small{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.standings-table-wrap {
+    width: 100%;
+    overflow: auto;
+    scrollbar-color: #777 #eee;
+    scrollbar-width: thin;
+}
+
+.standings-table-wrap::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.standings-table-wrap::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+.standings-table-wrap::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #777;
+}
+
+.standings-table {
+    width: 100%;
+    min-width: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: #111;
+    background: #fff;
+    font-size: 12px;
+}
+
+.standings-table th {
+    padding: 10px 8px;
+    color: #fff;
+    background: #050047;
+}
+
+.standings-table th:first-child,
+.standings-table td:first-child {
+    width: 44%;
+    text-align: left;
+}
+
+.standings-table td {
+    padding: 10px 8px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.standings-table tbody tr:nth-child(even) {
+    background: #ddd;
+}
+
+.standings-table .is-current {
+    color: #00a7b8;
+    background: #f5ffff;
+}
+
+.standings-table tr{
+    height: 53px;
+}
+
+.standings-club__crest {
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    margin-right: 8px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.home-match__standings .home-match__button {
+    margin-top: auto;
+}
+
+
 /* Today's schedule */
 .today-schedule {
     aspect-ratio: 1905/715;
     padding: clamp(72px, 5.2vw, 100px) 0 clamp(92px, 7vw, 134px);
     color: #00003f;
     background-color: #e6fbfd;
-    background-image: var(--schedule-background);
     background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 100% 100%
-}
-
-.today-schedule__container {
-    width: min(100% - 64px, 960px)
 }
 
 .today-schedule__header {
@@ -80,14 +595,16 @@
 }
 
 .today-schedule__header p {
+    font-family: "Noto Sans JP", sans-serif;
     margin: 12px 0 0;
-    font-weight: 800
+    font-weight: 600;
 }
 
 .today-schedule__board {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(56px, 7vw, 118px)
+    gap: clamp(56px, 7vw, 118px);
+    background: #fff;
 }
 
 .schedule-panel h3 {
@@ -109,7 +626,7 @@
 .schedule-panel__list {
     display: grid;
     grid-template-columns: 68px minmax(0, 1fr);
-    min-height: 152px;
+    min-height: 250px;
     border-block: 1px solid #c5ccd2;
     color: #23476a;
     font-size: 10px
@@ -131,7 +648,7 @@
 
 .schedule-panel__list li {
     min-height: 50px;
-    padding: 7px 10px;
+    padding: 8px 12px;
     border-bottom: 1px solid #c5ccd2
 }
 
@@ -155,12 +672,21 @@
     font-weight: 800
 }
 
-.schedule-panel__list li:nth-child(2) .schedule-panel__type {
-    background: #e6003d
+.schedule-panel__type--practice {
+    background: #b19a62;
 }
 
-.schedule-panel__list li:nth-child(3) .schedule-panel__type {
-    background: #00a9bd
+.schedule-panel__type--birthday {
+    background: #f0c400;
+}
+
+.schedule-panel__type--ticket {
+    background: #df2438;
+}
+
+.schedule-panel__type--school,
+.schedule-panel__type--event {
+    background: #00a9bd;
 }
 
 .schedule-panel__meta strong {
@@ -168,7 +694,28 @@
 }
 
 .schedule-panel__list p {
-    margin: 3px 0 0
+    margin: 3px 0 0;
+}
+
+.schedule-panel__text {
+    color: #78a9d4;
+    line-height: 1.45;
+}
+
+.schedule-panel__location {
+    position: relative;
+    padding-left: 13px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.schedule-panel__location::before {
+    position: absolute;
+    top: .15em;
+    left: 0;
+    color: #111;
+    content: "●";
+    font-size: .65em;
 }
 
 .schedule-panel__button {
@@ -192,7 +739,6 @@
 .home-movie__header h2 {
     font-size: 50px;
     margin: 0;
-    font-family: "peckham-press", "Arial Black", sans-serif;
     line-height: 1;
 }
 
@@ -206,9 +752,10 @@
 .home-goods__header p,
 .home-top-team__header p,
 .home-movie__header p {
+    font-family: "Noto Sans JP", sans-serif;
     margin: 12px 0 0;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .partner-story img,
@@ -224,19 +771,16 @@
 .home-partners__button,
 .home-goods__button,
 .home-top-team__button {
+    font-family: "Noto Sans JP", sans-serif;
     display: grid;
     place-items: center;
     border-radius: 999px;
     color: #fff;
-    font-weight: 800;
+    font-weight: 700;
     text-decoration: none;
 }
 
-.home-partners__button:hover,
-.home-goods__button:hover {
-    background: #008fa3;
-    transform: translateY(-2px);
-}
+
 
 .partner-stories__viewport,
 .top-team-carousel__viewport {
@@ -301,17 +845,18 @@
 }
 
 .home-partners__header p {
+    font-family: "Noto Sans JP", sans-serif;
     margin: 10px 0 0;
     color: #111;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .home-partners__logos {
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
     align-items: center;
-    gap: 22px 28px;
+    gap: 22px 18px;
     max-width: 760px;
     margin: 0 auto;
     padding: 0;
@@ -732,7 +1277,7 @@
 .movie-card.is-active {
     z-index: 3;
     opacity: 1;
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-50%);
 }
 
 .movie-card.is-prev,
@@ -877,7 +1422,7 @@
     border-bottom: 2px solid var(--category-color, #8d8d8d);
     color: #111;
     background: #f4f4f4;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1.35;
     text-align: center;
@@ -966,7 +1511,7 @@
 .home-news-row h3 {
     font-family: "Noto Sans JP", sans-serif;
     margin: 12px 0 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.45;
 }
@@ -1047,24 +1592,23 @@
 }
 
 .home-latest-news__button {
+    font-family: "Noto Sans JP", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    min-height: 38px;
+    width: 230px;
+    min-height: 45px;
     margin: 38px auto 0;
     border-radius: 999px;
     color: #fff;
     background: #00a6b8;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     text-decoration: none;
     transition: opacity .2s ease;
 }
 
-.home-latest-news__button:hover {
-    opacity: .8;
-}
+
 
 /* Homepage ticket promotion */
 .home-ticket {
@@ -1141,13 +1685,14 @@
 }
 
 .home-ticket__button {
+    font-family: "Noto Sans JP", sans-serif;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     height: 45px;
     margin-top: 24px;
     border-radius: 999px;
-    font-weight: 400;
+    font-weight: 700;
     color: #fff;
     background: #00a7b8;
     font-size: 18px;
@@ -1156,9 +1701,7 @@
     transition: opacity .2s ease;
 }
 
-.home-ticket__button:hover {
-    opacity: .82;
-}
+
 
 .home-ticket__media,
 .home-ticket__bottom {
@@ -1197,7 +1740,6 @@
 /* Official fanclub and supporter guide */
 .home-fanclub-guide {
     width: 100%;
-    max-height: 700px;
     overflow: hidden;
     background: #e5d3d3;
 }
@@ -1213,7 +1755,7 @@
 .supporter-guide-panel {
     position: relative;
     min-width: 0;
-    height: clamp(500px, 47.9167vw, 700px);
+    height: 680px;
     overflow: hidden;
 }
 
@@ -1253,21 +1795,22 @@
 }
 
 .fanclub-panel__header p {
+    font-family: "Noto Sans JP", sans-serif;
     margin: 10px 0 12px;
-    font-size: clamp(9px, .8vw, 13px);
+    font-size: 21px;
     font-weight: 700;
 }
 
 .fanclub-panel__header img {
     display: block;
-    width: clamp(130px, 14vw, 220px);
+    width: clamp(200px, 18vw, 330px);
     height: auto;
     margin-inline: auto;
 }
 
 .fanclub-coupon {
     display: block;
-    width: min(82%, 620px);
+    max-width: 550px;
     height: auto;
     margin-top: 50px;
     object-fit: contain;
@@ -1283,7 +1826,6 @@
     left: 50%;
     width: min(48%, 310px);
     height: 50px;
-    min-height: 50px;
     border-radius: 999px;
     font-size: 18px;
     font-weight: 900;
@@ -1323,14 +1865,14 @@
 .supporter-guide-panel__title h2 {
     margin: 0;
     font-family: "peckham-press", "Arial Black", sans-serif;
-    font-size: 50px;
+    font-size: 75px;
     line-height: .9;
 }
 
 .supporter-guide-panel__title p {
     margin: 8px 0 0;
-    font-size: clamp(9px, .8vw, 13px);
-    font-weight: 900;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .supporter-guide-panel__lead {
@@ -1346,12 +1888,164 @@
     background: #080047;
 }
 
-.fanclub-panel__button:hover,
-.supporter-guide-panel__button:hover {
-    opacity: .82;
+
+
+
+
+
+
+
+
+/* Shared CTA system */
+.schedule-panel__button,
+.home-partners__button,
+.home-goods__button,
+.home-top-team__button,
+.home-latest-news__button,
+.home-ticket__button,
+.fanclub-panel__button,
+.supporter-guide-panel__button,
+.home-match__button {
+    width: 300px;
+    height: 50px;
+    min-height: 0;
+    max-width: none;
+    transition: background-color .2s ease, transform .2s ease, opacity .2s ease;
 }
 
-@media (max-width: 920px) {
+.schedule-panel__button:hover,
+.home-partners__button:hover,
+.home-goods__button:hover,
+.home-top-team__button:hover,
+.home-latest-news__button:hover,
+.home-ticket__button:hover,
+.fanclub-panel__button:hover,
+.supporter-guide-panel__button:hover,
+.home-match__button:hover {
+    opacity: 1;
+    background: #008fa3;
+    transform: translateY(-2px);
+}
+
+.fanclub-panel__button:hover,
+.supporter-guide-panel__button:hover {
+    transform: translateX(-50%) translateY(-2px);
+}
+
+
+
+/* Keep ticket content inside the navy frame at compact desktop widths. */
+
+
+/* Desktop CTA dimensions */
+
+
+/* Fanclub and Guide: stacked through tablet, split on desktop. */
+
+@media (max-width: 768px) {
+    .home-banner {
+        padding-top: 8px;
+    }
+
+    .home-banner__stage {
+        height: 48.2vw;
+    }
+
+    .home-banner__slide {
+        width: 100vw;
+    }
+
+    .home-banner__slide.is-prev {
+        transform: translateX(-150%);
+    }
+
+    .home-banner__slide.is-next {
+        transform: translateX(50%);
+    }
+
+    .home-banner__thumbnails {
+        display: flex;
+        width: 100%;
+        padding: 0 12px 4px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .home-banner__thumbnail {
+        flex: 0 0 118px;
+        scroll-snap-align: start;
+    }
+    .home-match__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .home-match__panel,
+    .home-match__standings-content {
+        min-height: 560px;
+    }
+
+    .home-match__tab {
+        min-height: 52px;
+        font-size: 20px;
+    }
+
+    .match-carousel__viewport {
+        width: min(calc(100% - 32px), 376px);
+    }
+
+    .match-card {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .home-match__button {
+        width: 210px;
+        height: 35px;
+        font-size: 13px;
+    }
+
+    .latest-match-card {
+        width: min(92%, 580px);
+    }
+
+    .latest-match-card__result {
+        gap: 10px;
+        padding-inline: 12px;
+    }
+
+    .latest-match-card__result img,
+    .latest-match-card__opponent {
+        width: 64px;
+        height: 64px;
+    }
+
+    .latest-match-card__score strong {
+        font-size: 42px;
+    }
+
+    .standings-summary>strong {
+        font-size: 50px;
+    }
+
+    .standings-summary p {
+        gap: 0;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .standings-summary b {
+        padding: 7px 9px;
+    }
+
+    .today-schedule {
+        background-image: var(--schedule-background);
+        background-position: center bottom;
+    }
+
+    .today-schedule__board {
+        padding: 32px 20px;
+    }
+
 
     .home-partners__header h2,
     .home-goods__header h2,
@@ -1410,8 +2104,14 @@
     }
 
     .home-partners__logos {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
         width: calc(100% - 32px);
         gap: 14px 10px;
+    }
+
+    .home-partners__logos li:nth-child(6),
+    .home-partners__logos li:nth-child(10) {
+        grid-column: auto / span 2;
     }
 
     .home-partners__logos li {
@@ -1670,9 +2370,12 @@
         margin-inline: auto;
     }
 
-    .fanclub-panel,
+    .fanclub-panel {
+        height: 450px;
+    }
+
     .supporter-guide-panel {
-        height: 350px;
+        height: 375px;
     }
 
     .fanclub-panel__content {
@@ -1680,33 +2383,37 @@
     }
 
     .fanclub-panel__header h2 {
+        padding-top: 20px;
         font-size: 25px;
+    }
+
+    .home-top-team__header p {
+        font-size: 10px;
     }
 
     .fanclub-panel__header p {
         margin: 6px 0;
-        font-size: 7px;
+        font-size: 12px;
     }
 
     .fanclub-panel__header img {
-        width: 110px;
+        padding-top: 25px;
+        width: 200px;
     }
 
     .fanclub-coupon {
-        width: 82%;
+        width: 90%;
         max-width: 352px;
         height: auto;
-        margin-top: 12px;
+        margin-top: 25px;
     }
 
     .fanclub-panel__button,
     .supporter-guide-panel__button {
-        bottom: 14px;
-        width: 232px;
-        max-width: 54%;
-        height: 30px;
-        min-height: 30px;
-        font-size: 8px;
+        width: 210px;
+        max-width: calc(100% - 32px);
+        height: 35px;
+        font-size: 13px;
     }
 
     .supporter-guide-panel__content {
@@ -1714,23 +2421,25 @@
     }
 
     .supporter-guide-panel__title {
+        height: 100px;
         width: 82%;
         max-width: 352px;
         padding: 20px 8%;
     }
 
     .supporter-guide-panel__title h2 {
-        font-size: 25px;
+        font-size: 40px;
     }
 
     .supporter-guide-panel__title p {
         margin-top: 5px;
-        font-size: 8px;
+        font-size: 12px;
     }
 
     .supporter-guide-panel__lead {
         margin: 28px 0 14px;
-        font-size: 20px;
+        font-size: 25px;
+        line-height: 150%;
     }
 
     .home-hero {
@@ -1773,16 +2482,19 @@
         transform: translateX(-50%);
     }
 
-}
 
-@media (max-width: 394px) {
+    .home-ticket__heading p {
+        font-size: 10px;
+    }
+
     .home-top-team__header p {
         color: #030044;
     }
 
     .home-ticket__button {
+        width: 210px;
         height: 36px;
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .home-ticket__heading {
@@ -1859,11 +2571,95 @@
     }
 
     .schedule-panel__button {
-        width: min(250px, 80%)
+        width: 210px;
+        font-size: 13px;
     }
+
+    .schedule-panel__button,
+    .home-partners__button,
+    .home-goods__button,
+    .home-top-team__button,
+    .home-latest-news__button,
+    .home-ticket__button,
+    .fanclub-panel__button,
+    .supporter-guide-panel__button {
+        width: 210px;
+        height: 35px;
+        min-height: 0;
+        max-width: none;
+    }
+
+
+}
+
+@media (min-width: 769px) {
+    .today-schedule {
+        background-image: var(--schedule-background);
+        background-position: center bottom;
+        background-size: 100% 100%;
+    }
+
+    .today-schedule__board {
+        padding: 48px 48px 36px;
+    }
+
+    .home-ticket__top {
+        height: 300px;
+    }
+
+    .home-ticket__heading h2 {
+        margin-top: 30px;
+    }
+
+    .home-ticket__description {
+        margin-top: 12px;
+    }
+
+    .home-ticket__button {
+        margin-top: 16px;
+    }
+
+    .home-ticket__media,
+    .home-ticket__bottom {
+        margin-top: -55px;
+    }
+
+    .schedule-panel__button,
+    .home-goods__button,
+    .home-top-team__button,
+    .home-latest-news__button,
+    .home-ticket__button {
+        height: 50px;
+    }
+
+    .fanclub-panel__button,
+    .supporter-guide-panel__button {
+        width: 293px;
+        height: 45px;
+        max-width: none;
+    }
+
+    .home-partners__button {
+        width: 480px;
+        height: 60px;
+    }
+
+    .home-fanclub-guide {
+        max-height: 700px;
+    }
+
+    .home-fanclub-guide__inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .home-banner__slide,
+    .home-banner__thumbnail {
+        transition: none;
+    }
+
     .movie-card {
         transition: none;
     }

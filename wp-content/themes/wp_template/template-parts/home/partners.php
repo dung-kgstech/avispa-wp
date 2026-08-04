@@ -45,7 +45,7 @@ $partner_cards = array(
     >
     <div class="site-container home-partners__inner">
         <header class="home-partners__header">
-            <h2 id="home-partners-title">PARTNERS</h2>
+            <h2 id="home-partners-title">PARTNER</h2>
             <p>パートナー</p>
         </header>
 

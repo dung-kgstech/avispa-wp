@@ -19,13 +19,9 @@ $home_sections = array(
 ?>
 
 <main id="primary" class="site-main home-page">
-    <section class="home-hero" aria-labelledby="home-title">
-        <div class="site-container home-hero__inner">
-            <p class="home-hero__eyebrow"><?php esc_html_e('AVISPA FUKUOKA', 'avispa'); ?></p>
-            <h1 id="home-title" class="home-hero__title"><?php echo esc_html(get_bloginfo('name')); ?></h1>
-            <p class="home-hero__lead"><?php echo esc_html(get_bloginfo('description')); ?></p>
-        </div>
-    </section>
+    <?php get_template_part('template-parts/home/banner'); ?>
+
+    <?php get_template_part('template-parts/home/match'); ?>
 
     <?php get_template_part('template-parts/home/todays', 'schedule'); ?>
 

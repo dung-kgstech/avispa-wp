@@ -206,6 +206,12 @@
 }
 
 /* Header responsive */
+
+
+
+
+/* Header layout from the mobile design */
+
 @media (max-width: 768px) {
     .header-top {
         height: 52px;
@@ -279,7 +285,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 394px) {
     .logo {
         margin-right: 6px;
     }
@@ -315,10 +321,7 @@
     .main-nav .ul_right {
         gap: 12px;
     }
-}
 
-/* Header layout from the mobile design */
-@media (max-width: 394px) {
     .site-header {
         overflow: hidden;
     }

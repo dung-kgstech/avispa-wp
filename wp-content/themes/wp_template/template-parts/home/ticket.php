@@ -26,7 +26,7 @@ $ticket_assets = array(
                 <p>チケット</p>
             </div>
             <p class="home-ticket__description">コピー要検討 / コピー要検討 / コピー要検討 / コピー要検討 /</p>
-            <a class="home-ticket__button" href="https://www.avispa.co.jp/tickets">チケットページを見る</a>
+            <a class="home-ticket__button">チケットページを見る</a>
         </div>
     </div>
 

@@ -274,4 +274,102 @@ document.addEventListener('DOMContentLoaded', function () {
         previousButton.addEventListener('click', function () { movePartnerSlider(-1); });
         nextButton.addEventListener('click', function () { movePartnerSlider(1); });
     }
+
+    const homeBanner = document.querySelector('[data-home-banner]');
+
+    if (homeBanner) {
+        const bannerSlides = Array.from(homeBanner.querySelectorAll('[data-banner-slide]'));
+        const bannerThumbnails = Array.from(homeBanner.querySelectorAll('[data-banner-thumbnail]'));
+        const reduceBannerMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let activeBannerIndex = 0;
+        let bannerTimer = null;
+
+        function showBanner(index) {
+            const slideCount = bannerSlides.length;
+            activeBannerIndex = (index + slideCount) % slideCount;
+            const previousIndex = (activeBannerIndex - 1 + slideCount) % slideCount;
+            const nextIndex = (activeBannerIndex + 1) % slideCount;
+
+            bannerSlides.forEach(function (slide, slideIndex) {
+                const isActive = slideIndex === activeBannerIndex;
+                slide.classList.toggle('is-active', isActive);
+                slide.classList.toggle('is-prev', slideIndex === previousIndex);
+                slide.classList.toggle('is-next', slideIndex === nextIndex);
+                slide.setAttribute('aria-hidden', String(!isActive));
+            });
+
+            bannerThumbnails.forEach(function (thumbnail) {
+                const isActive = Number(thumbnail.dataset.bannerThumbnail) === activeBannerIndex;
+                thumbnail.classList.toggle('is-active', isActive);
+                if (isActive) {
+                    thumbnail.setAttribute('aria-current', 'true');
+                } else {
+                    thumbnail.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        function startBanner() {
+            window.clearInterval(bannerTimer);
+            if (!reduceBannerMotion.matches) {
+                bannerTimer = window.setInterval(function () {
+                    showBanner(activeBannerIndex + 1);
+                }, 5000);
+            }
+        }
+
+        bannerThumbnails.forEach(function (thumbnail) {
+            thumbnail.addEventListener('click', function () {
+                showBanner(Number(thumbnail.dataset.bannerThumbnail));
+                startBanner();
+            });
+        });
+
+        homeBanner.addEventListener('mouseenter', function () { window.clearInterval(bannerTimer); });
+        homeBanner.addEventListener('mouseleave', startBanner);
+        reduceBannerMotion.addEventListener('change', startBanner);
+        showBanner(0);
+        startBanner();
+    }
+    const matchSection = document.querySelector('.home-match');
+
+    if (matchSection) {
+        const matchTrack = matchSection.querySelector('.match-carousel__track');
+        const matchCards = Array.from(matchSection.querySelectorAll('.match-card'));
+        const matchTabs = Array.from(matchSection.querySelectorAll('.home-match__tab'));
+        const matchPanels = Array.from(matchSection.querySelectorAll('.home-match__tab-panel'));
+        const previousMatch = matchSection.querySelector('.match-carousel__arrow--prev');
+        const nextMatch = matchSection.querySelector('.match-carousel__arrow--next');
+        let activeCardIndex = 1;
+
+        function showMatchTab(index) {
+            matchTabs.forEach(function (tab, tabIndex) {
+                const isActive = tabIndex === index;
+                tab.classList.toggle('is-active', isActive);
+                tab.setAttribute('aria-selected', String(isActive));
+            });
+
+            matchPanels.forEach(function (panel, panelIndex) {
+                const isActive = panelIndex === index;
+                panel.classList.toggle('is-active', isActive);
+                panel.hidden = !isActive;
+            });
+        }
+
+        function showMatchCard(index) {
+            activeCardIndex = (index + matchCards.length) % matchCards.length;
+            matchTrack.style.transform = 'translateX(-' + matchCards[activeCardIndex].offsetLeft + 'px)';
+            matchCards.forEach(function (card, cardIndex) {
+                card.classList.toggle('is-active', cardIndex === activeCardIndex);
+            });
+        }
+
+        matchTabs.forEach(function (tab, tabIndex) {
+            tab.addEventListener('click', function () { showMatchTab(tabIndex); });
+        });
+        previousMatch.addEventListener('click', function () { showMatchCard(activeCardIndex - 1); });
+        nextMatch.addEventListener('click', function () { showMatchCard(activeCardIndex + 1); });
+        showMatchTab(0);
+        showMatchCard(1);
+    }
 });

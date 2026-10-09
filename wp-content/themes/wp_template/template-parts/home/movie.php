@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Home movie carousel.
  *
@@ -31,8 +32,7 @@ $movie_items = array(
                     class="movie-card <?php echo esc_attr($movie_position); ?>"
                     href="#"
                     data-movie-index="<?php echo esc_attr($index); ?>"
-                    aria-label="<?php echo esc_attr($movie_item['label']); ?>"
-                >
+                    aria-label="<?php echo esc_attr($movie_item['label']); ?>">
                     <img src="<?php echo esc_url($movie_image_url . '?ver=' . filemtime($movie_image_path)); ?>" alt="" loading="lazy">
                     <span class="movie-card__play" aria-hidden="true">▶</span>
                 </a>
@@ -44,7 +44,7 @@ $movie_items = array(
 
         <div class="movie-carousel__dots" aria-label="Choose movie">
             <?php foreach ($movie_items as $index => $movie_item) : ?>
-                <button type="button" data-movie-dot="<?php echo esc_attr($index); ?>" aria-label="<?php echo esc_attr(sprintf('Movie %d', $index + 1)); ?>"<?php echo 0 === $index ? ' class="is-active" aria-current="true"' : ''; ?>></button>
+                <button type="button" data-movie-dot="<?php echo esc_attr($index); ?>" aria-label="<?php echo esc_attr(sprintf('Movie %d', $index + 1)); ?>" <?php echo 0 === $index ? ' class="is-active" aria-current="true"' : ''; ?>></button>
             <?php endforeach; ?>
         </div>
     </div>

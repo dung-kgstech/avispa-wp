@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Today's schedule section.
  *
@@ -55,15 +56,12 @@ $schedule_groups = array(
 <section
     class="today-schedule"
     aria-labelledby="today-schedule-title"
-    style="--schedule-background: url('<?php echo esc_url(get_template_directory_uri() . '/images/home/shedule-background.webp?ver=' . filemtime(get_template_directory() . '/images/home/shedule-background.webp')); ?>');"
->
-
+    style="--schedule-background: url('<?php echo esc_url(get_template_directory_uri() . '/images/home/shedule-background.webp?ver=' . filemtime(get_template_directory() . '/images/home/shedule-background.webp')); ?>');">
     <div class="site-container today-schedule__container">
         <header class="today-schedule__header">
             <h2 id="today-schedule-title">TODAY'S SCHEDULE</h2>
             <p>本日のスケジュール</p>
         </header>
-
         <div class="today-schedule__board">
             <?php foreach ($schedule_groups as $group) : ?>
                 <article class="schedule-panel">
@@ -92,7 +90,6 @@ $schedule_groups = array(
                             <?php endforeach; ?>
                         </ul>
                     </div>
-
                     <a class="schedule-panel__button" href="#">
                         <?php esc_html_e('カレンダーを見る', 'avispa'); ?>
                     </a>

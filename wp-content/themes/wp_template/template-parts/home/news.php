@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Homepage news section.
  *
@@ -45,7 +46,7 @@ $category_labels = array('ALL', 'ニュース', 'チケット', 'トップチー
                 $post_title = $fallback_title;
                 $post_date = '2026.00.00';
                 $category = 'お知らせ';
-                ?>
+            ?>
                 <article class="home-news-card">
                     <a href="<?php echo esc_url($post_url); ?>">
                         <img src="<?php echo esc_url($news_image_url . '?ver=' . filemtime($news_image_path)); ?>" alt="" loading="lazy">
@@ -67,7 +68,7 @@ $category_labels = array('ALL', 'ニュース', 'チケット', 'トップチー
                 $post_title = $fallback_row_title;
                 $post_date = '2026.00.00';
                 $category = $fallback_row_categories[$row_index];
-                ?>
+            ?>
                 <article class="home-news-row">
                     <a href="<?php echo esc_url($post_url); ?>">
                         <div class="home-news-row__meta">

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Homepage ticket promotion.
  *

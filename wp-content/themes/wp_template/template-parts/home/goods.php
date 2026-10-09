@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Home goods showcase.
  *
@@ -16,8 +17,7 @@ $goods_items = array(
 <section
     class="home-goods"
     aria-labelledby="home-goods-title"
-    style="--goods-background: url('<?php echo esc_url($goods_background_url . '?ver=' . filemtime($goods_background_path)); ?>');"
->
+    style="--goods-background: url('<?php echo esc_url($goods_background_url . '?ver=' . filemtime($goods_background_path)); ?>');">
     <div class="site-container home-goods__inner">
         <div class="home-goods__header">
             <h2 id="home-goods-title">GOODS</h2>
@@ -36,8 +36,7 @@ $goods_items = array(
                     src="<?php echo esc_url($goods_text_url . '?ver=' . filemtime($goods_text_path)); ?>"
                     alt="AVISPA ONLINE SHOP"
                     width="347"
-                    height="156"
-                >
+                    height="156">
             </div>
 
             <div class="goods-carousel" data-goods-carousel>
@@ -52,15 +51,14 @@ $goods_items = array(
                             <img
                                 src="<?php echo esc_url($goods_image_url . '?ver=' . filemtime($goods_image_path)); ?>"
                                 alt="<?php echo esc_attr($goods_item['label']); ?>"
-                                loading="lazy"
-                            >
+                                loading="lazy">
                         </button>
                     <?php endforeach; ?>
                 </div>
 
                 <div class="goods-carousel__dots" aria-label="Choose goods slide">
                     <?php foreach ($goods_items as $index => $goods_item) : ?>
-                        <button type="button" data-goods-dot="<?php echo esc_attr($index); ?>" aria-label="<?php echo esc_attr(sprintf('Slide %d', $index + 1)); ?>"<?php echo 0 === $index ? ' class="is-active" aria-current="true"' : ''; ?>></button>
+                        <button type="button" data-goods-dot="<?php echo esc_attr($index); ?>" aria-label="<?php echo esc_attr(sprintf('Slide %d', $index + 1)); ?>" <?php echo 0 === $index ? ' class="is-active" aria-current="true"' : ''; ?>></button>
                     <?php endforeach; ?>
                 </div>
             </div>

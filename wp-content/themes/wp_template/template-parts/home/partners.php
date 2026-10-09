@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Home partners showcase.
  *
@@ -41,8 +42,7 @@ $partner_cards = array(
         alt=""
         width="2880"
         height="300"
-        loading="lazy"
-    >
+        loading="lazy">
     <div class="site-container home-partners__inner">
         <header class="home-partners__header">
             <h2 id="home-partners-title">PARTNER</h2>
@@ -59,8 +59,7 @@ $partner_cards = array(
                     <img
                         src="<?php echo esc_url($partner_logo_url . '?ver=' . filemtime($partner_logo_path)); ?>"
                         alt="<?php echo esc_attr($partner_logo['name']); ?>"
-                        loading="lazy"
-                    >
+                        loading="lazy">
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -79,8 +78,7 @@ $partner_cards = array(
                             <img
                                 src="<?php echo esc_url($partner_video_url . '?ver=' . filemtime($partner_video_path)); ?>"
                                 alt="<?php echo esc_attr($partner_card['title']); ?>"
-                                loading="lazy"
-                            >
+                                loading="lazy">
                         </a>
                     <?php endforeach; ?>
                 </div>

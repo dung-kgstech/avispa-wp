@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Homepage match and standings section.
  *
@@ -82,12 +83,49 @@ $standings_background = '/images/match/standing_back.webp';
                 <p class="standings-date">2025.12.08 現在</p>
                 <div class="standings-table-wrap">
                     <table class="standings-table">
-                        <thead><tr><th>J1年間順位（11/30）</th><th>勝点</th><th>勝</th><th>分</th><th>負</th><th>得失点</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>J1年間順位（11/30）</th>
+                                <th>勝点</th>
+                                <th>勝</th>
+                                <th>分</th>
+                                <th>負</th>
+                                <th>得失点</th>
+                            </tr>
+                        </thead>
                         <tbody>
-                            <tr><td>10　<img class="standings-club__crest" src="<?php echo esc_url($theme_uri . '/images/match/FC_logo/FC_logo2.webp'); ?>" alt="">C大阪</td><td>52</td><td>14</td><td>10</td><td>13</td><td>5</td></tr>
-                            <tr><td>11　<img class="standings-club__crest" src="<?php echo esc_url($theme_uri . '/images/match/FC_logo/FC_logo3.webp'); ?>" alt="">広島</td><td>49</td><td>13</td><td>10</td><td>14</td><td>-7</td></tr>
-                            <tr class="is-current"><td>12　<img class="standings-club__crest" src="<?php echo esc_url($theme_uri . '/images/match/FC_logo/FC_logo4.webp'); ?>" alt="">福岡</td><td>48</td><td>12</td><td>12</td><td>13</td><td>-3</td></tr>
-                            <tr><td>13　<img class="standings-club__crest" src="<?php echo esc_url($theme_uri . '/images/match/FC_logo/FC_logo5.webp'); ?>" alt="">清水</td><td>44</td><td>11</td><td>11</td><td>15</td><td>-9</td></tr>
+                            <tr>
+                                <td>10　<img class="standings-club__crest" src="<?php echo esc_url($theme_uri . '/images/match/FC_logo/FC_logo2.webp'); ?>" alt="">C大阪</td>
+                                <td>52</td>
+                                <td>14</td>
+                                <td>10</td>
+                                <td>13</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>11　<img class="standings-club__crest" src="<?php echo esc_url($theme_uri . '/images/match/FC_logo/FC_logo3.webp'); ?>" alt="">広島</td>
+                                <td>49</td>
+                                <td>13</td>
+                                <td>10</td>
+                                <td>14</td>
+                                <td>-7</td>
+                            </tr>
+                            <tr class="is-current">
+                                <td>12　<img class="standings-club__crest" src="<?php echo esc_url($theme_uri . '/images/match/FC_logo/FC_logo4.webp'); ?>" alt="">福岡</td>
+                                <td>48</td>
+                                <td>12</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>-3</td>
+                            </tr>
+                            <tr>
+                                <td>13　<img class="standings-club__crest" src="<?php echo esc_url($theme_uri . '/images/match/FC_logo/FC_logo5.webp'); ?>" alt="">清水</td>
+                                <td>44</td>
+                                <td>11</td>
+                                <td>11</td>
+                                <td>15</td>
+                                <td>-9</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

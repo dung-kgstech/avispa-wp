@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Homepage hero banner carousel.
  *
@@ -14,7 +15,7 @@ $banner_thumbnail_order = array(1, 2, 3, 4, 5, 1, 2, 3, 4, 5);
     <div class="home-banner__stage">
         <?php foreach ($banner_images as $banner_index => $banner_image) : ?>
             <a class="home-banner__slide<?php echo 0 === $banner_index ? ' is-active' : ''; ?>" href="#" data-banner-slide="<?php echo esc_attr($banner_index); ?>" aria-hidden="<?php echo 0 === $banner_index ? 'false' : 'true'; ?>">
-                <img src="<?php echo esc_url($banner_uri . $banner_image . '?ver=' . filemtime($banner_dir . $banner_image)); ?>" alt="ピックアップバナー <?php echo esc_attr($banner_index + 1); ?>" width="2166" height="1044"<?php echo 0 === $banner_index ? ' fetchpriority="high"' : ' loading="lazy"'; ?>>
+                <img src="<?php echo esc_url($banner_uri . $banner_image . '?ver=' . filemtime($banner_dir . $banner_image)); ?>" alt="ピックアップバナー <?php echo esc_attr($banner_index + 1); ?>" width="2166" height="1044" <?php echo 0 === $banner_index ? ' fetchpriority="high"' : ' loading="lazy"'; ?>>
             </a>
         <?php endforeach; ?>
     </div>

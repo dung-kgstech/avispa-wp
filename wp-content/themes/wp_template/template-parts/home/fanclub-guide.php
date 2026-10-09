@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Official fanclub and first-time supporter guide banners.
  *

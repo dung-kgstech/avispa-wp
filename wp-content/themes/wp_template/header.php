@@ -5,11 +5,11 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+	<?php wp_body_open(); ?>
 	<header class="site-header">
 
 		<!-- Header Top -->
@@ -69,7 +69,7 @@
 				<ul class="ul_left">
 					<li class="menu-ticket"><a href="#" data-mobile-label="チケット">TICKET</a></li>
 					<li class="menu-match"><a href="#" data-mobile-label="試合・練習">MATCH</a></li>
-					<li class="menu-team"><a href="#" data-mobile-label="選手・クラブ">TEAM</a></li>
+					<li class="menu-team"><a href="<?php echo esc_url(home_url('/team')); ?>" data-mobile-label="選手・クラブ">TEAM</a></li>
 					<li class="menu-home"><a href="#" data-mobile-label="ホーム">HOME</a></li>
 					<li class="menu-news"><a href="#" data-mobile-label="ニュース">NEWS</a></li>
 				</ul>

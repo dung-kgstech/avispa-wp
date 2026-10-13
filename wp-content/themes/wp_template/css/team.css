@@ -1,0 +1,624 @@
+@font-face {
+    font-family: "peckham-press";
+    src: url(https://use.typekit.net/af/4202da/0000000…/31/l?primer=7cdcb44…&fvd=n4&v=3) format("woff2"), 
+         url(https://use.typekit.net/af/4202da/0000000…/31/d?primer=7cdcb44…&fvd=n4&v=3) format("woff"), 
+         url(https://use.typekit.net/af/4202da/0000000…/31/a?primer=7cdcb44…&fvd=n4&v=3) format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "NotoSansJP";
+    src: url("../fonts/NotoSansJP-Bold.woff2") format("woff2"),
+         url("../fonts/NotoSansJP-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ==========================================
+   1. GLOBAL & HERO SECTION
+   ========================================== */
+.team-page {
+    background: #efefef;
+    color: #fff;
+}
+
+.team-page__hero {
+    position: relative;
+    display: block; 
+    width: 100%;
+    height: 362px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.team-page__hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/team/team-bg.webp') no-repeat center center / cover;
+    filter: brightness(0.9);
+    z-index: 0;
+}
+
+.team-page__hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: rgba(180, 180, 180, 0.92);
+    z-index: 1; 
+}
+
+.team-page__hero-copy {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 55%; 
+    padding-left: 10rem;
+    background: linear-gradient(90deg, rgba(0, 29, 93, 0.85) 0%, rgba(10, 58, 133, 0.72) 28%, rgba(15, 93, 182, 0.5) 100%);
+}
+
+.team-page__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.8rem;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.team-page__eyebrow-mark {
+    display: inline-block;
+    width: 0.5rem;
+    height: 1.2rem;
+    background: #fff;
+    border-radius: 0.1rem;
+}
+
+.team-page__hero-copy h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 35px;
+    font-family: "NotoSansJP", sans-serif;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+}
+
+.team-page__hero-media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.4rem, 2vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+/* ==========================================
+   2. MAIN CONTAINER & TOC (SIDEBAR)
+   ========================================== */
+.team-page__container {
+    margin: 0 auto;
+    padding: 4rem 10rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    color: #333;
+    background-color: #fff;
+}
+
+.team-page__toc {
+    font-size: 0.875rem;
+}
+
+.team-page__toc-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.team-page__toc-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #cbd5e1;
+    margin-left: 0.75rem;
+}
+
+.team-page__toc-list,
+.team-page__toc-sublist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.team-page__toc-item {
+    position: relative;
+    border-bottom: 1px solid #cbd5e1;
+    padding: 0.85rem 0;
+}
+
+.team-page__toc-link {
+    color: #002d72;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1.4;
+    display: block;
+    padding-right: 1.5rem;
+}
+
+.team-page__toc-link:hover,
+.team-page__toc-sublist a:hover {
+    text-decoration: underline;
+}
+
+.team-page__toc-item.is-expanded .team-page__toc-icon {
+    position: absolute;
+    right: 0;
+    top: 1.1rem;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #002d72;
+    border-right: 2px solid #002d72;
+    transform: rotate(-45deg);
+}
+
+.team-page__toc-sublist {
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.team-page__toc-sublist li {
+    margin-bottom: 0.6rem;
+}
+
+.team-page__toc-sublist a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.825rem;
+    font-weight: 700;
+    line-height: 1.4;
+    display: block;
+}
+
+.team-page__toc-sublist a:hover {
+    color: #002d72;
+}
+
+/* ==========================================
+   3. ARTICLE CONTENT & MEDIA BLOCKS
+   ========================================== */
+.team-page__content {
+    line-height: 1.7;
+}
+
+.team-page__h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+    margin: 0 0 2rem 0;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid #64748b;
+}
+
+.team-page__h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+    margin: 2.5rem 0 2rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.team-page__h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 7px;
+    background-color: #001d5d;
+}
+
+.team-page__h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+    margin: 2rem 0 1.5rem 0;
+}
+
+.team-page__body {
+    font-size: 0.95rem;
+    color: #222;
+}
+
+.team-page__body p {
+    margin-bottom: 1.25rem;
+    word-break: break-all;
+}
+
+.team-page__body a {
+    color: #00a8cc;
+    text-decoration: underline;
+}
+
+.team-page__body a:hover {
+    opacity: 0.8;
+}
+/* ==========================================
+   ARTICLE MEDIA BLOCKS (Slider)
+   ========================================== */
+
+.team-media-slider-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2.5rem auto;
+    position: relative; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.team-media-block{
+    display: flex;
+    justify-content: center;
+}
+
+.team-slider-wrapper {
+    width: 100%;
+    max-width: 800px; 
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.team-media-main {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 800 / 450;
+    max-height: 450px;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    color: #111;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.team-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #00a8cc;
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.5vw, 1.4rem);
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+.team-slider-btn--prev {
+    left: -60px; 
+}
+
+.team-slider-btn--next {
+    right: -60px; 
+}
+
+.team-slider-btn:hover {
+    opacity: 0.85;
+}
+
+.team-thumbnails {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+.team-thumb {
+    flex: 1; 
+    min-width: 0; 
+    max-width: 191px; 
+    aspect-ratio: 191 / 107;
+    height: auto;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 0.85rem;
+    cursor: pointer;
+    opacity: 0.7;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.team-thumb.is-active,
+.team-thumb:hover {
+    opacity: 1;
+    border-color: #002d72;
+}
+
+.team-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0.5rem;
+}
+
+.team-slider-dots .dot {
+    width: 24px;
+    height: 4px;
+    background-color: #cbd5e1;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.team-slider-dots .dot.is-active {
+    background-color: #00a8cc;
+}
+
+.team-store-table-container {
+    width: 100%;
+    margin: 2.5rem auto;
+    overflow-x: auto; 
+    box-sizing: border-box;
+}
+
+.team-store-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    color: #222;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+}
+
+.team-store-table thead tr {
+    background-color: #001d5d; 
+    color: #fff;
+}
+
+.team-store-table th {
+    padding: 1rem 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.team-store-table td {
+    padding: 1.25rem 1.25rem;
+    vertical-align: top;
+    line-height: 1.6;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.team-store-table tbody tr:nth-child(even) {
+    background-color: #f8fafc; 
+}
+
+.team-store-table tbody tr:nth-child(odd) {
+    background-color: #ffffff; 
+}
+
+.store-name {
+    font-weight: 700;
+    color: #111;
+    width: 30%;
+}
+
+.store-address {
+    width: 40%;
+    color: #334155;
+}
+
+.store-info {
+    width: 30%;
+    color: #334155;
+}
+
+.store-info a {
+    color: #00a8cc;
+    text-decoration: underline;
+}
+
+.store-info a:hover {
+    opacity: 0.8;
+}
+
+.team-info-table-container {
+    width: 100%;
+    margin: 2.5rem auto;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.team-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    color: #222;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+}
+
+.team-info-table th.info-label {
+    width: 25%;
+    padding: 1.25rem 1.5rem;
+    font-weight: 700;
+    text-align: left;
+    color: #111;
+    vertical-align: top;
+    border-bottom: 1px solid #e2e8f0;
+    background-color: #ffffff;
+}
+
+.team-info-table td.info-value {
+    width: 75%;
+    padding: 1.25rem 1.5rem;
+    vertical-align: top;
+    line-height: 1.7;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.team-info-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.team-info-table tbody tr:nth-child(odd) {
+    background-color: #ffffff; 
+}
+
+.address-text {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.address-text a {
+    color: #00a8cc;
+    text-decoration: underline;
+}
+
+.address-text a:hover {
+    opacity: 0.8;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 500px; 
+    margin-top: 0.5rem;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+/* ==========================================
+   4. RESPONSIVE MEDIA QUERIES
+   ========================================== */
+@media (max-width: 768px) {
+    .team-page__container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2rem 20px; 
+    }
+
+    .team-page__toc {
+        display: none;
+    }
+
+    .team-page__hero-copy {
+        padding: 2rem;
+    }
+
+    .team-page__h2 {
+        font-size: 1.2rem;
+    }
+
+    .team-page__h3 {
+        font-size: 1.05rem;
+    }
+
+    .team-page__h4 {
+        font-size: 0.95rem;
+    }
+
+    .team-slider-btn {
+        width: 26px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .team-thumbnails {
+        gap: 8px;
+    }
+
+    .team-thumb {
+        width: calc(25% - 6px); 
+        height: auto;
+        aspect-ratio: 191 / 107;
+        font-size: 0.75rem;
+    }
+
+    .team-store-table th,
+    .team-store-table td {
+        padding: 0.85rem 0.75rem;
+        font-size: 0.825rem;
+    }
+
+    .team-slider-btn--prev {
+        left: 0px; 
+    }
+
+    .team-slider-btn--next {
+        right: 0px; 
+    }
+
+    .team-info-table th.info-label,
+    .team-info-table td.info-value {
+        padding: 0.85rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .team-info-table th.info-label {
+        width: 30%;
+    }
+
+    .team-info-table td.info-value {
+        width: 70%;
+    }
+}
+
+@media (max-width: 393px) {
+    .team-page__hero {
+        height: 100px;
+        overflow: visible;
+    }
+
+    .team-page__hero-copy h1,
+    .team-page__hero-media {
+        font-size: 14px;
+    }
+}

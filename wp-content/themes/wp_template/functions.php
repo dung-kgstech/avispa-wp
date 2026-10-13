@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme setup and shared helpers.
  *
@@ -9,7 +10,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-function avispa_theme_setup() {
+function avispa_theme_setup()
+{
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', array('search-form', 'gallery', 'caption', 'style', 'script'));
@@ -25,7 +27,8 @@ add_action('after_setup_theme', 'avispa_theme_setup');
  * @param string $context Asset context: default or footer-mobile.
  * @return array<int, array<string, string>>
  */
-function avispa_get_social_items($context = 'default') {
+function avispa_get_social_items($context = 'default')
+{
     $items = array(
         array('label' => 'X', 'icon' => 'x-logo.webp', 'url' => '#'),
         array('label' => 'Instagram', 'icon' => 'instagram-logo.webp', 'url' => '#'),
@@ -48,7 +51,8 @@ function avispa_get_social_items($context = 'default') {
     return $items;
 }
 
-function avispa_enqueue_assets() {
+function avispa_enqueue_assets()
+{
     $theme_dir = get_template_directory();
     $theme_uri = get_template_directory_uri();
 
@@ -63,17 +67,23 @@ function avispa_enqueue_assets() {
         wp_enqueue_style('avispa-home', $theme_uri . '/css/home.css', array('avispa-base'), filemtime($theme_dir . '/css/home.css'));
         wp_enqueue_script('avispa-home', $theme_uri . '/home.js', array('avispa-common'), filemtime($theme_dir . '/home.js'), true);
     }
+
+    if (is_page_template('team-page.php') || is_page('team-page')) {
+        wp_enqueue_style('avispa-team', $theme_uri . '/css/team.css', array('avispa-base'), filemtime($theme_dir . '/css/team.css'));
+    }
 }
 add_action('wp_enqueue_scripts', 'avispa_enqueue_assets');
 
-function avispa_category_posts_per_page($query) {
+function avispa_category_posts_per_page($query)
+{
     if (!is_admin() && $query->is_main_query() && $query->is_category()) {
         $query->set('posts_per_page', 9);
     }
 }
 add_action('pre_get_posts', 'avispa_category_posts_per_page');
 
-function avispa_breadcrumbs() {
+function avispa_breadcrumbs()
+{
     if (is_front_page()) {
         return '';
     }
@@ -98,6 +108,26 @@ function avispa_breadcrumbs() {
     return '<nav class="breadcrumbs" aria-label="Breadcrumb">' . implode('<span class="breadcrumbs__separator">/</span>', $items) . '</nav>';
 }
 add_shortcode('my_breadcrumbs', 'avispa_breadcrumbs');
+
+function avispa_ensure_team_page()
+{
+    if (!get_page_by_path('team')) {
+        $team_page_id = wp_insert_post(array(
+            'post_title' => 'Team',
+            'post_name' => 'team',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_content' => '',
+        ));
+
+        if (!is_wp_error($team_page_id)) {
+            update_post_meta($team_page_id, '_wp_page_template', 'team-page.php');
+        }
+
+        flush_rewrite_rules();
+    }
+}
+add_action('init', 'avispa_ensure_team_page');
 
 remove_action('wp_head', 'wp_generator');
 add_filter('the_generator', '__return_empty_string');

@@ -188,7 +188,7 @@
 
 /* SNS */
 .footer-sns {
-    min-height: 136px;
+    min-height: 221px;
     color: #fff;
     background-color: #00a9bd;
     background-image: var(--sns-background);
@@ -198,7 +198,7 @@
 }
 
 .footer-sns__inner {
-    min-height: 112px;
+    min-height: 180px;
     display: flex;
     align-items: center;
     justify-content: space-between;

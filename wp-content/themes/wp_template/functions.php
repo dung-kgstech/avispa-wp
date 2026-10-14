@@ -68,6 +68,10 @@ function avispa_enqueue_assets()
         wp_enqueue_script('avispa-home', $theme_uri . '/home.js', array('avispa-common'), filemtime($theme_dir . '/home.js'), true);
     }
 
+    if (is_page_template('match-page.php') || is_page('match-page')) {
+        wp_enqueue_style('avispa-match', $theme_uri . '/css/match.css', array('avispa-base'), filemtime($theme_dir . '/css/match.css'));
+    }
+
     if (is_page_template('team-page.php') || is_page('team-page')) {
         wp_enqueue_style('avispa-team', $theme_uri . '/css/team.css', array('avispa-base'), filemtime($theme_dir . '/css/team.css'));
     }
@@ -108,6 +112,26 @@ function avispa_breadcrumbs()
     return '<nav class="breadcrumbs" aria-label="Breadcrumb">' . implode('<span class="breadcrumbs__separator">/</span>', $items) . '</nav>';
 }
 add_shortcode('my_breadcrumbs', 'avispa_breadcrumbs');
+
+function avispa_ensure_match_page()
+{
+    if (!get_page_by_path('match')) {
+        $match_page_id = wp_insert_post(array(
+            'post_title' => 'Match',
+            'post_name' => 'match',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_content' => '',
+        ));
+
+        if (!is_wp_error($match_page_id)) {
+            update_post_meta($match_page_id, '_wp_page_template', 'match-page.php');
+        }
+
+        flush_rewrite_rules();
+    }
+}
+add_action('init', 'avispa_ensure_match_page');
 
 function avispa_ensure_team_page()
 {

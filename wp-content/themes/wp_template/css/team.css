@@ -1,8 +1,6 @@
 @font-face {
     font-family: "peckham-press";
-    src: url("https://use.typekit.net/af/4202da/0000000…/31/l?primer=7cdcb44…&fvd=n4&v=3") format("woff2"), 
-         url("https://use.typekit.net/af/4202da/0000000…/31/d?primer=7cdcb44…&fvd=n4&v=3") format("woff"), 
-         url("https://use.typekit.net/af/4202da/0000000…/31/a?primer=7cdcb44…&fvd=n4&v=3") format("opentype");
+    src: url("https://use.typekit.net/af/4202da/00000000000000007735eb7b/31/l?primer=7cdcb44be4a7813a0...&fvd=n4&v=3") format("woff2");
     font-display: auto;
     font-style: normal;
     font-weight: 400;
@@ -329,7 +327,7 @@
     .template_page {
         .team-banner {
             padding: 0;
-            background: url('../images/team/team-bg.webp') no-repeat center center / cover;
+            background: url('../images/match/match-bg.webp') no-repeat center center / cover;
             min-height: calc(100 / var(--base) * 100vw);
 
             .team-banner-title {
@@ -523,5 +521,29 @@
         list-style: none;
         position: relative;
         z-index: 4;
+    }
+
+    .card-container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card-list {
+        flex-wrap: wrap; 
+        gap: 24px 16px; 
+    }
+
+    .card-item {
+        width: calc(50% - 8px); 
+    }
+
+    .card-thumb {
+        height: calc(140 / 375 * 100vw); 
+        max-height: 160px;
+    }
+
+    .card-title {
+        font-size: 14px; 
+        margin-top: 8px;
     }
 }

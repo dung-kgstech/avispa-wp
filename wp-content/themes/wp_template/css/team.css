@@ -453,6 +453,26 @@
         padding: 14px 0;
     }
 
+    .team-page-header {
+        .team-breadcrumb {
+            .team-breadcrumb-inner {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 11px 19px 10px 19px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .team-breadcrumb-inner {
+        flex-wrap: nowrap !important;
+        font-size: 9px;
+        overflow: scroll;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+        font-family: "NotoSansJP", sans-serif;
+    }
     .team_anc {
         display: flex;
         justify-content: space-between;

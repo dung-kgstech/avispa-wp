@@ -75,6 +75,9 @@ function avispa_enqueue_assets()
     if (is_page_template('templates/pages/team-page.php') || is_page('team-page')) {
         wp_enqueue_style('avispa-team', $theme_uri . '/css/team.css', array('avispa-base'), filemtime($theme_dir . '/css/team.css'));
     }
+    if (is_page_template('templates/pages/player-detail-page.php') || is_page('player-detail-page')) {
+        wp_enqueue_style('avispa-player', $theme_uri . '/css/player.css', array('avispa-base'), filemtime($theme_dir . '/css/player.css'));
+    }
 }
 add_action('wp_enqueue_scripts', 'avispa_enqueue_assets');
 
@@ -152,6 +155,26 @@ function avispa_ensure_team_page()
     }
 }
 add_action('init', 'avispa_ensure_team_page');
+
+function avispa_ensure_player_page()
+{
+    if (!get_page_by_path('player')) {
+        $player_page_id = wp_insert_post(array(
+            'post_title' => 'Player',
+            'post_name' => 'player',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_content' => '',
+        ));
+
+        if (!is_wp_error($player_page_id)) {
+            update_post_meta($player_page_id, '_wp_page_template', 'templates/pages/player-detail-page.php');
+        }
+
+        flush_rewrite_rules();
+    }
+}
+add_action('init', 'avispa_ensure_player_page');
 
 remove_action('wp_head', 'wp_generator');
 add_filter('the_generator', '__return_empty_string');

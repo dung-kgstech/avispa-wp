@@ -22,9 +22,9 @@ get_header();
             <img src="<?php echo get_template_directory_uri(); ?>/images/team/team-bg.webp" alt="トップチーム選手・スタッフ">
         </div>
     </section>
+
     <nav class="team-breadcrumb" aria-label="Breadcrumb">
         <div class="team-breadcrumb-inner container_1440" typeof="BreadcrumbList" vocab="https://schema.org/">
-
             <span property="itemListElement" typeof="ListItem"><span property="name">ホーム</span>
                 <meta property="position" content="1">
             </span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name">TEAM – 選手・クラブ</span>

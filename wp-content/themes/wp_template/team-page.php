@@ -9,20 +9,22 @@
 get_header();
 ?>
 
-<main id="primary" class="team-bg">
-    <section class="team-page__hero" aria-label="team page hero">
-        <div class="team-page__hero-copy">
-            <div class="team-page__eyebrow">
-                <span class="team-page__eyebrow-mark" aria-hidden="true"></span>
-                TEAM
+<div class="team-page-header team-page-header template_page">
+    <section class="team-banner has-image">
+        <div class="team-banner-inner">
+            <div class="team-banner-text">
+                <span class="team-banner-subtitle">TEAM</span>
+                <h1 class="team-banner-title">トップチーム選手・スタッフ</h1>
             </div>
-            <h1>トップチーム選手・スタッフ</h1>
         </div>
 
-        <div class="team-page__hero-media">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/team/team-bg.webp" alt="永石 拓海">
+        <div class="team-banner-image">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/team/team-bg.webp" alt="トップチーム選手・スタッフ">
         </div>
     </section>
+</div>
+
+<div id="primary" class="team-bg">
 
     <div class="team-main">
         <ul class="team_anc">
@@ -45,10 +47,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_nagaishi_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -60,10 +62,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_obata_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -75,10 +77,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_fujita_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -90,10 +92,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_obi_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
                 </div>
             </div>
@@ -112,10 +114,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_nagaishi_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -127,10 +129,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_obata_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -142,10 +144,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_fujita_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -157,10 +159,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_obi_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
                 </div>
             </div>
@@ -179,10 +181,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_nagaishi_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -194,10 +196,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_obata_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -209,10 +211,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_fujita_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -224,10 +226,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_obi_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
                 </div>
             </div>
@@ -246,10 +248,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_nagaishi_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -261,10 +263,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_obata_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
 
@@ -276,10 +278,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_fujita_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
 
                     <div class="team_box_list">
@@ -290,10 +292,10 @@ get_header();
                             <div class="team_box_list_name_en">Matsuyama Kenta</div>
                         </div>
                         <ul class="team_box_list_sns">
-                            <li><a href="https://twitter.com/albsaikou41" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
-                            <li><a href="https://www.avispa.co.jp/cms/wp-content/uploads/2023/06/insta_member.png" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png"></a></li>
+                            <li><a href="#" target="_blank" rel="noreferrer noopener"><img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png"></a></li>
                         </ul>
-                        <a href="https://www.avispa.co.jp/player/gk_obi_2026-27" class="team_box_list_link"></a>
+                        <a href="#" class="team_box_list_link"></a>
                     </div>
                 </div>
             </div>
@@ -327,6 +329,6 @@ get_header();
             </ul>
         </div>
     </div>
-</main>
+</div>
 
 <?php get_footer(); ?>

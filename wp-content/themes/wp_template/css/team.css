@@ -17,96 +17,111 @@
     font-style: normal;
 }
 
-.team-page {
-    background: #efefef;
-    color: #fff;
+:root {
+    --bg-body: #ffffff;
+    --base: 1440;
 }
 
-.team-page__hero {
+
+.template_page {
     position: relative;
-    display: block; 
-    width: 100%;
-    height: 362px;
-    overflow: hidden;
-    isolation: isolate;
+
+    .team-banner {
+        position: relative;
+        background: url('../images/match/match-bg.webp') no-repeat center center / cover;
+        overflow: hidden;
+        height: calc(362 / var(--base) * 100vw);
+        box-sizing: border-box;
+
+        .team-banner-inner {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center; 
+            padding-left: calc(106 / var(--base) * 100vw);
+            box-sizing: border-box;
+        }
+
+        .team-banner-subtitle {
+            font-family: "peckham-press", sans-serif;
+            font-size: calc(16 / var(--base) * 100vw);
+            position: relative;
+            padding-left: calc(8 / var(--base) * 100vw);
+            font-weight: 400;
+            color: #fff;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: calc(2 / var(--base) * 100vw);
+                height: calc(14 / var(--base) * 100vw);
+                background-color: #FFF;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .team-banner-title {
+            margin-top: calc(20 / var(--base) * 100vw);
+            font-family: "Noto Sans JP", sans-serif;
+            font-weight: bold;
+            font-size: calc(35 / var(--base) * 100vw);
+            width: calc(600 / var(--base) * 100vw);
+            line-height: 1.4;
+            word-wrap: break-word;
+            color: #fff;
+        }
+
+        &.has-image {
+            .team-banner-image {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+
+                img {
+                    width: calc(643 / var(--base) * 100vw);
+                    height: calc(362 / var(--base) * 100vw);
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+
+    .team-banner.has-image {
+        min-height: calc(362 / var(--base) * 100vw);
+
+        .team-banner-subtitle {
+            font-size: calc(16 / var(--base) * 100vw);
+            position: relative;
+            padding-left: calc(8 / var(--base) * 100vw);
+
+        }
+
+        .team-banner-title {
+            margin-top: calc(60 / var(--base) * 100vw);
+            width: calc(600 / var(--base) * 100vw);
+            word-wrap: break-word;
+        }
+
+        .team-banner-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%; 
+            img {
+                width: calc(643 / var(--base) * 100vw);
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 }
 
-.team-page__hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('../images/match/match-bg.webp') no-repeat center center / cover;
-    filter: brightness(0.9);
-    z-index: 0;
-}
-
-.team-page__hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45%;
-    height: 100%;
-    z-index: 1; 
-}
-
-.team-page__hero-copy {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 55%; 
-    padding-left: 10rem;
-}
-
-.team-page__eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.9rem;
-    margin-bottom: 1.8rem;
-    color: #fff;
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.team-page__eyebrow-mark {
-    display: inline-block;
-    width: 0.5rem;
-    height: 1.2rem;
-    background: #fff;
-    border-radius: 0.1rem;
-}
-
-.team-page__hero-copy h1 {
-    margin: 0;
-    color: #fff;
-    font-size: 35px;
-    font-family: "NotoSansJP", sans-serif;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    font-weight: 700;
-}
-
-.team-page__hero-media {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45%;
-    height: 100%;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: clamp(1.4rem, 2vw, 2.5rem);
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-align: center;
-}
 
 .card-section {
     box-sizing: border-box;
@@ -307,6 +322,80 @@
 }
 
 @media screen and (max-width: 768px) {
+        :root {
+        --base: 393;
+    }
+
+    .template_page {
+        .team-banner {
+            padding: 0;
+            background: url('../images/team/team-bg.webp') no-repeat center center / cover;
+            min-height: calc(100 / var(--base) * 100vw);
+
+            .team-banner-title {
+                font-size: calc(14 / var(--base) * 100vw);
+                margin-top: calc(12 / var(--base) * 100vw);
+                width: auto;
+            }
+
+            .team-banner-subtitle {
+                font-size: calc(9 / var(--base) * 100vw);
+            }
+
+            .team-banner-subtitle::before {
+                height: calc(6 / var(--base) * 100vw);
+            }
+
+            .team-banner-inner {
+                padding: 0;
+
+                .team-banner-text {
+                    padding-left: calc(20 / var(--base) * 100vw);
+                }
+            }
+
+            .team-banner-inner::before {
+                width: calc(157 / var(--base) * 100vw);
+                height: calc(164 / var(--base) * 100vw);
+                top: calc(-20 / var(--base) * 100vw);
+                left: calc(-43 / var(--base) * 100vw);
+            }
+        }
+
+        .team-banner.has-image {
+            height: auto;
+            min-height: calc(100 / var(--base) * 100vw);
+            padding: calc(16 / var(--base) * 100vw) 0;
+
+            .team-banner-subtitle {
+                font-size: calc(9 / var(--base) * 100vw);
+                margin-top: 0;
+            }
+
+            .team-banner-subtitle::before {
+                width: calc(2 / var(--base) * 100vw);
+            }
+
+            .team-banner-title {
+                margin-top: calc(16 / var(--base) * 100vw);
+                width: calc(180 / var(--base) * 100vw);
+            }
+
+            .team-banner-image {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+
+                img {
+                    width: calc(178 / var(--base) * 100vw);
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
     .team-main {
         width: 90%;
         margin: 0 auto;

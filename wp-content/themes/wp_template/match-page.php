@@ -9,20 +9,22 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main match-page">
-    <section class="match-page__hero" aria-label="match page hero">
-        <div class="match-page__hero-copy">
-            <div class="match-page__eyebrow">
-                <span class="match-page__eyebrow-mark" aria-hidden="true"></span>
-                TEMPLATE
+<div class="match-page-header match-page-header template_page">
+    <section class="match-banner has-image">
+        <div class="match-banner-inner">
+            <div class="match-banner-text">
+                <span class="match-banner-subtitle">MATCH</span>
+                <h1 class="match-banner-title">トップチーム選手・スタッフ</h1>
             </div>
-            <h1>下層ページテンプレート</h1>
         </div>
 
-        <div class="match-page__hero-media">
-            <span>画像が入る</span>
+        <div class="match-banner-image">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/match/gray-bg.webp" alt="トップチーム選手・スタッフ">
         </div>
     </section>
+</div>
+
+<div id="primary" class="site-main match-page">
     <section class="match-page__container">
         <aside class="match-page__toc">
             <h2 class="match-page__toc-title">目次</h2>
@@ -215,6 +217,6 @@ get_header();
             </div>
         </article>
     </section>
-</main>
+</div>
 
 <?php get_footer(); ?>

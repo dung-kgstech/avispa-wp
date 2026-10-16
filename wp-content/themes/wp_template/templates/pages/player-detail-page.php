@@ -8,8 +8,8 @@
 
 get_header();
 
-$top_team_background_path = get_template_directory() . '/images/home/topteam_bg.webp';
-$top_team_background_url = get_template_directory_uri() . '/images/home/topteam_bg.webp';
+$top_team_background_path = get_template_directory() . '/images/team/player/other-bg.webp';
+$top_team_background_url = get_template_directory_uri() . '/images/team/player/other-bg.webp';
 $top_team_players = array(
     array('number' => '1', 'position' => 'GK', 'name' => '永石 拓海', 'roman' => 'NAGAISHI TAKUMI', 'image' => 'player_1.webp'),
     array('number' => '3', 'position' => 'DF', 'name' => '奈良 竜樹', 'roman' => 'NARA TATSUKI', 'image' => 'player_2.webp'),
@@ -155,7 +155,6 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
                             <th>プロサッカー選手を目指す子どもたちへのメッセージ</th>
                             <td>ここに回答がはいります。この文言はダミーです。任意のテキストに置き換えてください。</td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -307,7 +306,6 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
                 </div>
                 <button class="top-team-carousel__arrow top-team-carousel__arrow--next" type="button" aria-label="Next players">›</button>
             </div>
-
             <a class="home-top-team__button" href="#">全選手を見る</a>
         </div>
     </section>
@@ -340,8 +338,6 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
             </li>
         </ul>
     </div>
-
-
 </div>
 
 <?php get_footer(); ?>

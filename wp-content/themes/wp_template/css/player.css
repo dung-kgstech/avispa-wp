@@ -352,6 +352,7 @@
         padding-left: 106px;
         gap: 22px;
         z-index: 2;
+        font-family: "peckham-press", "Peckham Press", sans-serif
     }
 
     .player-banner-number-wrap {
@@ -639,7 +640,6 @@
     flex-direction: column;
     gap: 10px;
     color: #030044;
-    font-family: "Arial Black", Impact, sans-serif;
     font-style: normal;
     line-height: .72;
     pointer-events: none;
@@ -648,12 +648,14 @@
 .top-team-card__number strong {
     font-size: 54px;
     letter-spacing: -.08em;
+    font-family: "peckham-press", sans-serif;
 }
 
 .top-team-card__number span {
     font-size: 18px;
     font-weight: 900;
     letter-spacing: -.04em;
+    font-family: "peckham-press", sans-serif;
 }
 
 .top-team-card__info {
@@ -1069,6 +1071,74 @@
 
             img {
                 width: auto;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+
+     .player-ambition-section {
+        margin: 60px auto 0;
+        height: 535px;
+        padding: 40px 20px 0;
+        box-sizing: border-box;
+
+        .ambition-banner-inner {
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .ambition-content-wrap {
+            width: 100%;
+            padding-left: 0;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .ambition-badge {
+            width: 207px;
+            height: 37px;
+            font-size: 17px;
+            padding: 8px 35px;
+            margin-bottom: 28px;
+            clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
+        }
+
+        .ambition-quote-box {
+            padding: 42px 60px;
+            width: 100%;
+            height: 114px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bracket {
+            width: 16px;
+            height: 30px;
+            border-width: 4px;
+        }
+
+        .ambition-text {
+            font-size: 20px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .ambition-player-image {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 290px;
+            height: 310px;
+            z-index: 1;
+
+            img {
+                width: 100%;
                 height: 100%;
                 object-fit: cover;
                 display: block;

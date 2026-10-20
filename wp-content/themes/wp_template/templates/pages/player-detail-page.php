@@ -191,48 +191,62 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
                 <h3 class="team-staff-category-title information-category-title">ギャラリー</h3>
                 <div class="card-container">
                     <ul class="card-list">
-                        <div class="card-item">
+                        <li class="card-item">
                             <a href="#" class="card-link">
                                 <div class="card-thumb">
                                     <span>images</span>
                                 </div>
                             </a>
-                        </div>
-                        <div class="card-item">
+                        </li>
+                        <li class="card-item">
                             <a href="#" class="card-link">
                                 <div class="card-thumb">
                                     <span>images</span>
                                 </div>
                             </a>
-                        </div>
-                        <div class="card-item">
+                        </li>
+                        <li class="card-item">
                             <a href="#" class="card-link">
                                 <div class="card-thumb">
                                     <span>images</span>
                                 </div>
                             </a>
-                        </div>
-                        <div class="card-item">
+                        </li>
+                        <li class="card-item">
                             <a href="#" class="card-link">
                                 <div class="card-thumb">
                                     <span>images</span>
                                 </div>
                             </a>
-                        </div>
-                        <div class="card-item">
+                        </li>
+                        <li class="card-item">
                             <a href="#" class="card-link">
                                 <div class="card-thumb">
                                     <span>images</span>
                                 </div>
                             </a>
-                        </div>
-                        <div class="card-item">
+                        </li>
+                        <li class="card-item">
                             <a href="#" class="card-link">
                                 <div class="card-thumb">
                                     <span>images</span>
                                 </div>
                             </a>
-                        </div>
+                        </li>
+                        <li class="card-item">
+                            <a href="#" class="card-link">
+                                <div class="card-thumb">
+                                    <span>images</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card-item">
+                            <a href="#" class="card-link">
+                                <div class="card-thumb">
+                                    <span>images</span>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -317,7 +331,6 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
                     <div class="card-thumb">
                         <span>images</span>
                     </div>
-                    <div class="card-title">オフィシャルチアリーダーズ</div>
                 </a>
             </li>
             <li class="card-item">
@@ -325,7 +338,6 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
                     <div class="card-thumb">
                         <span>images</span>
                     </div>
-                    <div class="card-title">チーム強化支援募金</div>
                 </a>
             </li>
             <li class="card-item">
@@ -333,7 +345,27 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
                     <div class="card-thumb">
                         <span>images</span>
                     </div>
-                    <div class="card-title">会社概要</div>
+                </a>
+            </li>
+            <li class="card-item">
+                <a href="#" class="card-link">
+                    <div class="card-thumb">
+                        <span>images</span>
+                    </div>
+                </a>
+            </li>
+            <li class="card-item">
+                <a href="#" class="card-link">
+                    <div class="card-thumb">
+                        <span>images</span>
+                    </div>
+                </a>
+            </li>
+            <li class="card-item">
+                <a href="#" class="card-link">
+                    <div class="card-thumb">
+                        <span>images</span>
+                    </div>
                 </a>
             </li>
         </ul>

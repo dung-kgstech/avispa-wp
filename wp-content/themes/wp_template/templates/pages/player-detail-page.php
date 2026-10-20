@@ -269,7 +269,7 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
                 <p>他の選手を見る</p>
             </div>
             <div class="top-team-carousel" data-top-team-carousel>
-                <button class="top-team-carousel__arrow top-team-carousel__arrow--prev" type="button" aria-label="Previous players">‹</button>
+                <!-- <button class="top-team-carousel__arrow top-team-carousel__arrow--prev" type="button" aria-label="Previous players">‹</button> -->
                 <div class="top-team-carousel__viewport">
                     <div class="top-team-carousel__track">
                         <?php for ($group = 0; $group < 3; $group++) : ?>
@@ -304,7 +304,7 @@ $player_bio = 'Cầu thủ thuộc đội hình chính của Avispa Fukuoka, đ�
                         <?php endfor; ?>
                     </div>
                 </div>
-                <button class="top-team-carousel__arrow top-team-carousel__arrow--next" type="button" aria-label="Next players">›</button>
+                <!-- <button class="top-team-carousel__arrow top-team-carousel__arrow--next" type="button" aria-label="Next players">›</button> -->
             </div>
             <a class="home-top-team__button" href="#">全選手を見る</a>
         </div>

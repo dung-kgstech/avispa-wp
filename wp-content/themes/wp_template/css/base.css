@@ -3,7 +3,7 @@
 ========================== */
 @font-face {
     font-family: "peckham-press";
-    src: url(https://use.typekit.net/af/4202da/0000000…/31/l?primer=7cdcb44…&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/4202da/0000000…/31/d?primer=7cdcb44…&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/4202da/0000000…/31/a?primer=7cdcb44…&fvd=n4&v=3) format("opentype");
+    src: url("../fonts/PeckhamPress-Trial.otf") format("opentype");
     font-display: auto;
     font-style: normal;
     font-weight: 400;
@@ -11,21 +11,19 @@
 }
 
 @font-face {
-    font-family: "NotoSansJP";
-    src:
-        url("../fonts/NotoSansJP-Bold.woff2") format("woff2"),
-        url("../fonts/NotoSansJP-Bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-}
-
-
-
-@font-face {
     font-family: "din-condensed-bold";
     src: url("../fonts/DIN-Condensed-Bold.ttf") format("ttf");
     font-style: normal;
 }
+
+@font-face {
+    font-family: "NotoSansJP";
+    src: url("../fonts/NotoSansJP-Bold.woff2") format("woff2"),
+         url("../fonts/NotoSansJP-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 
 /* ==========================

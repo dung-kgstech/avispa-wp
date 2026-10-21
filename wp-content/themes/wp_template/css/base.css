@@ -19,6 +19,15 @@
     font-style: normal;
 }
 
+
+
+@font-face {
+    font-family: "din-condensed-bold";
+    src: url("../fonts/DIN-Condensed-Bold.ttf") format("ttf");
+    font-style: normal;
+}
+
+
 /* ==========================
    RESET
 ========================== */

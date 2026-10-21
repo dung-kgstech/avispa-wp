@@ -59,7 +59,7 @@ get_header();
                     'meta_query'     => [
                         [
                             'key'     => 'position',
-                            'value'   => 'GK /ゴールキーパー',
+                            'value'   => 'GK',
                             'compare' => '=',
                         ],
                     ],
@@ -72,6 +72,8 @@ get_header();
                             <?php
                             $player_id = get_the_ID();
 
+                            $player_avarta = get_post_meta($player_id, 'player_avarta', true);
+                            $player_avarta_url = wp_get_attachment_image_url($player_avarta, 'medium');
                             $player_number = get_post_meta($player_id, 'player_number', true);
                             $player_name_kanji = get_post_meta($player_id, 'player_name_kanji', true);
                             $player_name_romaji = get_post_meta($player_id, 'player_name_romaji', true);
@@ -80,301 +82,300 @@ get_header();
                             <div class="team_box_list">
                                 <div class="team_box_list_img">
                                     <img
-                                        src="<?php echo esc_url(get_template_directory_uri() . '/images/topteam/player_3.webp'); ?>"
+                                        src="<?php echo esc_url($player_avarta_url); ?>"
                                         alt="<?php echo esc_attr($player_name_kanji); ?>">
+
+                                    <div class="team_box_list_name">
+                                        <div class="team_box_list_name_num">
+                                            <?php echo esc_html($player_number); ?>
+                                        </div>
+
+                                        <div class="team_box_list_name_jp">
+                                            <?php echo esc_html($player_name_kanji); ?>
+                                        </div>
+
+                                        <div class="team_box_list_name_en">
+                                            <?php echo esc_html($player_name_romaji); ?>
+                                        </div>
+                                    </div>
+
+                                    <ul class="team_box_list_sns">
+                                        <li>
+                                            <a href="#" target="_blank" rel="noreferrer noopener">
+                                                <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png" alt="X">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" rel="noreferrer noopener">
+                                                <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png" alt="Instagram">
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="<?php the_permalink(); ?>" class="team_box_list_link"></a>
                                 </div>
 
-                                <div class="team_box_list_name">
-                                    <div class="team_box_list_name_num">
-                                        <?php echo esc_html($player_number); ?>
-                                    </div>
-
-                                    <div class="team_box_list_name_jp">
-                                        <?php echo esc_html($player_name_kanji); ?>
-                                    </div>
-
-                                    <div class="team_box_list_name_en">
-                                        <?php echo esc_html($player_name_romaji); ?>
-                                    </div>
-                                </div>
-
-                                <ul class="team_box_list_sns">
-                                    <li>
-                                        <a href="#" target="_blank" rel="noreferrer noopener">
-                                            <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png" alt="X">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank" rel="noreferrer noopener">
-                                            <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png" alt="Instagram">
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <a href="<?php the_permalink(); ?>" class="team_box_list_link"></a>
+                            <?php endwhile; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
                             </div>
-
-                        <?php endwhile; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
                 </div>
             </div>
-        </div>
 
-        <div class="team_boxes">
-            <div class="team_box">
-                <div id="link1" class="anclink"></div>
-                <h2 class="team_boxes_ttl">DF /ディフェンダー</h2>
-                <?php
-                $players = new WP_Query([
-                    'post_type'      => 'player',
-                    'post_status'    => 'publish',
-                    'posts_per_page' => -1,
+            <div class="team_boxes">
+                <div class="team_box">
+                    <div id="link1" class="anclink"></div>
+                    <h2 class="team_boxes_ttl">DF /ディフェンダー</h2>
+                    <?php
+                    $players = new WP_Query([
+                        'post_type'      => 'player',
+                        'post_status'    => 'publish',
+                        'posts_per_page' => -1,
 
-                    'meta_query'     => [
-                        [
-                            'key'     => 'position',
-                            'value'   => 'DF /ディフェンダー',
-                            'compare' => '=',
+                        'meta_query'     => [
+                            [
+                                'key'     => 'position',
+                                'value'   => 'DF',
+                                'compare' => '=',
+                            ],
                         ],
-                    ],
-                ]);
-                ?>
-                <div class="team_box_lists">
-                    <?php if ($players->have_posts()) : ?>
-                        <?php while ($players->have_posts()) : $players->the_post(); ?>
+                    ]);
+                    ?>
+                    <div class="team_box_lists">
+                        <?php if ($players->have_posts()) : ?>
+                            <?php while ($players->have_posts()) : $players->the_post(); ?>
 
-                            <?php
-                            $player_id = get_the_ID();
+                                <?php
+                                $player_id = get_the_ID();
 
-                            $player_number = get_post_meta($player_id, 'player_number', true);
-                            $player_name_kanji = get_post_meta($player_id, 'player_name_kanji', true);
-                            $player_name_romaji = get_post_meta($player_id, 'player_name_romaji', true);
-                            ?>
+                                $player_number = get_post_meta($player_id, 'player_number', true);
+                                $player_name_kanji = get_post_meta($player_id, 'player_name_kanji', true);
+                                $player_name_romaji = get_post_meta($player_id, 'player_name_romaji', true);
+                                ?>
 
-                            <div class="team_box_list">
-                                <div class="team_box_list_img">
-                                    <img
-                                        src="<?php echo esc_url(get_template_directory_uri() . '/images/topteam/player_3.webp'); ?>"
-                                        alt="<?php echo esc_attr($player_name_kanji); ?>">
+                                <div class="team_box_list">
+                                    <div class="team_box_list_img">
+                                        <img
+                                            src="<?php echo esc_url(get_template_directory_uri() . '/images/topteam/player_3.webp'); ?>"
+                                            alt="<?php echo esc_attr($player_name_kanji); ?>">
+                                    </div>
+
+                                    <div class="team_box_list_name">
+                                        <div class="team_box_list_name_num">
+                                            <?php echo esc_html($player_number); ?>
+                                        </div>
+
+                                        <div class="team_box_list_name_jp">
+                                            <?php echo esc_html($player_name_kanji); ?>
+                                        </div>
+
+                                        <div class="team_box_list_name_en">
+                                            <?php echo esc_html($player_name_romaji); ?>
+                                        </div>
+                                    </div>
+
+                                    <ul class="team_box_list_sns">
+                                        <li>
+                                            <a href="#" target="_blank" rel="noreferrer noopener">
+                                                <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png" alt="X">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" rel="noreferrer noopener">
+                                                <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png" alt="Instagram">
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="<?php the_permalink(); ?>" class="team_box_list_link"></a>
                                 </div>
 
-                                <div class="team_box_list_name">
-                                    <div class="team_box_list_name_num">
-                                        <?php echo esc_html($player_number); ?>
-                                    </div>
-
-                                    <div class="team_box_list_name_jp">
-                                        <?php echo esc_html($player_name_kanji); ?>
-                                    </div>
-
-                                    <div class="team_box_list_name_en">
-                                        <?php echo esc_html($player_name_romaji); ?>
-                                    </div>
-                                </div>
-
-                                <ul class="team_box_list_sns">
-                                    <li>
-                                        <a href="#" target="_blank" rel="noreferrer noopener">
-                                            <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png" alt="X">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank" rel="noreferrer noopener">
-                                            <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png" alt="Instagram">
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <a href="<?php the_permalink(); ?>" class="team_box_list_link"></a>
-                            </div>
-
-                        <?php endwhile; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="team_boxes">
-            <div class="team_box">
-                <div id="link1" class="anclink"></div>
-                <h2 class="team_boxes_ttl">MF /ミッドフィルダー</h2>
-                <?php
-                $players = new WP_Query([
-                    'post_type'      => 'player',
-                    'post_status'    => 'publish',
-                    'posts_per_page' => -1,
+            <div class="team_boxes">
+                <div class="team_box">
+                    <div id="link1" class="anclink"></div>
+                    <h2 class="team_boxes_ttl">MF /ミッドフィルダー</h2>
+                    <?php
+                    $players = new WP_Query([
+                        'post_type'      => 'player',
+                        'post_status'    => 'publish',
+                        'posts_per_page' => -1,
 
-                    'meta_query'     => [
-                        [
-                            'key'     => 'position',
-                            'value'   => 'MF /ミッドフィルダー',
-                            'compare' => '=',
+                        'meta_query'     => [
+                            [
+                                'key'     => 'position',
+                                'value'   => 'MF',
+                                'compare' => '=',
+                            ],
                         ],
-                    ],
-                ]);
-                ?>
-                <div class="team_box_lists">
-                    <?php if ($players->have_posts()) : ?>
-                        <?php while ($players->have_posts()) : $players->the_post(); ?>
+                    ]);
+                    ?>
+                    <div class="team_box_lists">
+                        <?php if ($players->have_posts()) : ?>
+                            <?php while ($players->have_posts()) : $players->the_post(); ?>
 
-                            <?php
-                            $player_id = get_the_ID();
+                                <?php
+                                $player_id = get_the_ID();
 
-                            $player_number = get_post_meta($player_id, 'player_number', true);
-                            $player_name_kanji = get_post_meta($player_id, 'player_name_kanji', true);
-                            $player_name_romaji = get_post_meta($player_id, 'player_name_romaji', true);
-                            ?>
+                                $player_number = get_post_meta($player_id, 'player_number', true);
+                                $player_name_kanji = get_post_meta($player_id, 'player_name_kanji', true);
+                                $player_name_romaji = get_post_meta($player_id, 'player_name_romaji', true);
+                                ?>
 
-                            <div class="team_box_list">
-                                <div class="team_box_list_img">
-                                    <img
-                                        src="<?php echo esc_url(get_template_directory_uri() . '/images/topteam/player_3.webp'); ?>"
-                                        alt="<?php echo esc_attr($player_name_kanji); ?>">
+                                <div class="team_box_list">
+                                    <div class="team_box_list_img">
+                                        <img
+                                            src="<?php echo esc_url(get_template_directory_uri() . '/images/topteam/player_3.webp'); ?>"
+                                            alt="<?php echo esc_attr($player_name_kanji); ?>">
+                                    </div>
+
+                                    <div class="team_box_list_name">
+                                        <div class="team_box_list_name_num">
+                                            <?php echo esc_html($player_number); ?>
+                                        </div>
+
+                                        <div class="team_box_list_name_jp">
+                                            <?php echo esc_html($player_name_kanji); ?>
+                                        </div>
+
+                                        <div class="team_box_list_name_en">
+                                            <?php echo esc_html($player_name_romaji); ?>
+                                        </div>
+                                    </div>
+
+                                    <ul class="team_box_list_sns">
+                                        <li>
+                                            <a href="#" target="_blank" rel="noreferrer noopener">
+                                                <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png" alt="X">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" rel="noreferrer noopener">
+                                                <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png" alt="Instagram">
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="<?php the_permalink(); ?>" class="team_box_list_link"></a>
                                 </div>
 
-                                <div class="team_box_list_name">
-                                    <div class="team_box_list_name_num">
-                                        <?php echo esc_html($player_number); ?>
-                                    </div>
-
-                                    <div class="team_box_list_name_jp">
-                                        <?php echo esc_html($player_name_kanji); ?>
-                                    </div>
-
-                                    <div class="team_box_list_name_en">
-                                        <?php echo esc_html($player_name_romaji); ?>
-                                    </div>
-                                </div>
-
-                                <ul class="team_box_list_sns">
-                                    <li>
-                                        <a href="#" target="_blank" rel="noreferrer noopener">
-                                            <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png" alt="X">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank" rel="noreferrer noopener">
-                                            <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png" alt="Instagram">
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <a href="<?php the_permalink(); ?>" class="team_box_list_link"></a>
-                            </div>
-
-                        <?php endwhile; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="team_boxes">
-            <div class="team_box">
-                <div id="link1" class="anclink"></div>
-                <h2 class="team_boxes_ttl">FW /フォワード</h2>
-                <?php
-                $players = new WP_Query([
-                    'post_type'      => 'player',
-                    'post_status'    => 'publish',
-                    'posts_per_page' => -1,
-                    'meta_query'     => [
-                        [
-                            'key'     => 'position',
-                            'value'   => 'FW /フォワード',
-                            'compare' => '=',
+            <div class="team_boxes">
+                <div class="team_box">
+                    <div id="link1" class="anclink"></div>
+                    <h2 class="team_boxes_ttl">FW /フォワード</h2>
+                    <?php
+                    $players = new WP_Query([
+                        'post_type'      => 'player',
+                        'post_status'    => 'publish',
+                        'posts_per_page' => -1,
+                        'meta_query'     => [
+                            [
+                                'key'     => 'position',
+                                'value'   => 'FW',
+                                'compare' => '=',
+                            ],
                         ],
-                    ],
-                ]);
-                ?>
-                <div class="team_box_lists">
-                    <?php if ($players->have_posts()) : ?>
-                        <?php while ($players->have_posts()) : $players->the_post(); ?>
+                    ]);
+                    ?>
+                    <div class="team_box_lists">
+                        <?php if ($players->have_posts()) : ?>
+                            <?php while ($players->have_posts()) : $players->the_post(); ?>
 
-                            <?php
-                            $player_id = get_the_ID();
+                                <?php
+                                $player_id = get_the_ID();
 
-                            $player_number = get_post_meta($player_id, 'player_number', true);
-                            $player_name_kanji = get_post_meta($player_id, 'player_name_kanji', true);
-                            $player_name_romaji = get_post_meta($player_id, 'player_name_romaji', true);
-                            ?>
+                                $player_number = get_post_meta($player_id, 'player_number', true);
+                                $player_name_kanji = get_post_meta($player_id, 'player_name_kanji', true);
+                                $player_name_romaji = get_post_meta($player_id, 'player_name_romaji', true);
+                                ?>
 
-                            <div class="team_box_list">
-                                <div class="team_box_list_img">
-                                    <img
-                                        src="<?php echo esc_url(get_template_directory_uri() . '/images/topteam/player_3.webp'); ?>"
-                                        alt="<?php echo esc_attr($player_name_kanji); ?>">
+                                <div class="team_box_list">
+                                    <div class="team_box_list_img">
+                                        <img
+                                            src="<?php echo esc_url(get_template_directory_uri() . '/images/topteam/player_3.webp'); ?>"
+                                            alt="<?php echo esc_attr($player_name_kanji); ?>">
+                                    </div>
+
+                                    <div class="team_box_list_name">
+                                        <div class="team_box_list_name_num">
+                                            <?php echo esc_html($player_number); ?>
+                                        </div>
+
+                                        <div class="team_box_list_name_jp">
+                                            <?php echo esc_html($player_name_kanji); ?>
+                                        </div>
+
+                                        <div class="team_box_list_name_en">
+                                            <?php echo esc_html($player_name_romaji); ?>
+                                        </div>
+                                    </div>
+
+                                    <ul class="team_box_list_sns">
+                                        <li>
+                                            <a href="#" target="_blank" rel="noreferrer noopener">
+                                                <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png" alt="X">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank" rel="noreferrer noopener">
+                                                <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png" alt="Instagram">
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="<?php the_permalink(); ?>" class="team_box_list_link"></a>
                                 </div>
 
-                                <div class="team_box_list_name">
-                                    <div class="team_box_list_name_num">
-                                        <?php echo esc_html($player_number); ?>
-                                    </div>
-
-                                    <div class="team_box_list_name_jp">
-                                        <?php echo esc_html($player_name_kanji); ?>
-                                    </div>
-
-                                    <div class="team_box_list_name_en">
-                                        <?php echo esc_html($player_name_romaji); ?>
-                                    </div>
-                                </div>
-
-                                <ul class="team_box_list_sns">
-                                    <li>
-                                        <a href="#" target="_blank" rel="noreferrer noopener">
-                                            <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_x.png" alt="X">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank" rel="noreferrer noopener">
-                                            <img src="https://www.avispa.co.jp/wp-content/themes/custom/assets/images/icon_sns_ig.png" alt="Instagram">
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <a href="<?php the_permalink(); ?>" class="team_box_list_link"></a>
-                            </div>
-
-                        <?php endwhile; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="card-container">
-            <ul class="card-list">
-                <li class="card-item">
-                    <a href="#" class="card-link">
-                        <div class="card-thumb">
-                            <span>images</span>
-                        </div>
-                        <div class="card-title">オフィシャルチアリーダーズ</div>
-                    </a>
-                </li>
-                <li class="card-item">
-                    <a href="#" class="card-link">
-                        <div class="card-thumb">
-                            <span>images</span>
-                        </div>
-                        <div class="card-title">チーム強化支援募金</div>
-                    </a>
-                </li>
-                <li class="card-item">
-                    <a href="#" class="card-link">
-                        <div class="card-thumb">
-                            <span>images</span>
-                        </div>
-                        <div class="card-title">会社概要</div>
-                    </a>
-                </li>
-            </ul>
+            <div class="card-container">
+                <ul class="card-list">
+                    <li class="card-item">
+                        <a href="#" class="card-link">
+                            <div class="card-thumb">
+                                <span>images</span>
+                            </div>
+                            <div class="card-title">オフィシャルチアリーダーズ</div>
+                        </a>
+                    </li>
+                    <li class="card-item">
+                        <a href="#" class="card-link">
+                            <div class="card-thumb">
+                                <span>images</span>
+                            </div>
+                            <div class="card-title">チーム強化支援募金</div>
+                        </a>
+                    </li>
+                    <li class="card-item">
+                        <a href="#" class="card-link">
+                            <div class="card-thumb">
+                                <span>images</span>
+                            </div>
+                            <div class="card-title">会社概要</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

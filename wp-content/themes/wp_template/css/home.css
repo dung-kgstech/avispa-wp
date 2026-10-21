@@ -603,7 +603,7 @@ h2 {
 .today-schedule__board {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(56px, 7vw, 118px);
+    gap: clamp(56px, 7vw, 80px);
     background: #fff;
 }
 
@@ -625,7 +625,7 @@ h2 {
 
 .schedule-panel__list {
     display: grid;
-    grid-template-columns: 68px minmax(0, 1fr);
+    grid-template-columns: 100px minmax(0, 1fr);
     min-height: 250px;
     border-block: 1px solid #c5ccd2;
     color: #23476a;
@@ -637,7 +637,7 @@ h2 {
     place-items: center;
     padding: 8px;
     border-right: 1px solid #c5ccd2;
-    color: #313d4c
+    background-color: #F6F6F6;
 }
 
 .schedule-panel__list ul {
@@ -1230,7 +1230,6 @@ h2 {
     background: #03a8bc;
 }
 
-/* Movie */
 .home-movie {
     min-height: 445px;
     padding: 66px 0 54px;
@@ -1888,26 +1887,30 @@ h2 {
     background: #080047;
 }
 
-
-
-
-
-
-
-
-
-/* Shared CTA system */
 .schedule-panel__button,
 .home-partners__button,
-.home-goods__button,
-.home-top-team__button,
-.home-latest-news__button,
-.home-ticket__button,
 .fanclub-panel__button,
 .supporter-guide-panel__button,
 .home-match__button {
     width: 300px;
     height: 50px;
+    min-height: 0;
+    max-width: none;
+    transition: background-color .2s ease, transform .2s ease, opacity .2s ease;
+}
+
+.home-top-team__button,
+.home-latest-news__button{
+    width: 230px;
+    height: 45px;
+    min-height: 0;
+    max-width: none;
+    transition: background-color .2s ease, transform .2s ease, opacity .2s ease;
+}
+
+.home-goods__button{
+    width: 385px;
+    height: 46px;
     min-height: 0;
     max-width: none;
     transition: background-color .2s ease, transform .2s ease, opacity .2s ease;
@@ -1932,15 +1935,6 @@ h2 {
     transform: translateX(-50%) translateY(-2px);
 }
 
-
-
-/* Keep ticket content inside the navy frame at compact desktop widths. */
-
-
-/* Desktop CTA dimensions */
-
-
-/* Fanclub and Guide: stacked through tablet, split on desktop. */
 
 @media (max-width: 768px) {
     .home-banner {
@@ -2627,9 +2621,12 @@ h2 {
     .schedule-panel__button,
     .home-goods__button,
     .home-top-team__button,
-    .home-latest-news__button,
-    .home-ticket__button {
+    .home-latest-news__button{
         height: 50px;
+    }
+
+    .home-ticket__button {
+        height: 45px;
     }
 
     .fanclub-panel__button,

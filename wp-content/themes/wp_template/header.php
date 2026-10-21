@@ -70,7 +70,7 @@
 					<li class="menu-ticket"><a href="#" data-mobile-label="チケット">TICKET</a></li>
 					<li class="menu-match"><a href="<?php echo esc_url(home_url('/match')); ?>" data-mobile-label="試合・練習">MATCH</a></li>
 					<li class="menu-team"><a href="<?php echo esc_url(home_url('/team')); ?>" data-mobile-label="選手・クラブ">TEAM</a></li>
-					<li class="menu-home"><a href="#" data-mobile-label="ホーム">HOME</a></li>
+					<li class="menu-home"><a href="<?php echo esc_url(home_url('/')); ?>" data-mobile-label="ホーム">HOME</a></li>
 					<li class="menu-news"><a href="#" data-mobile-label="ニュース">NEWS</a></li>
 				</ul>
 				<ul class="ul_right">

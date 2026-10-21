@@ -308,8 +308,8 @@ $post_id = get_the_ID();
 								style="--top-team-background: url('<?php echo esc_url($top_team_background_url . '?ver=' . filemtime($top_team_background_path)); ?>');">
 								<div class="home-top-team__inner">
 									<div class="home-top-team__header">
-										<h2 id="home-top-team-title">TOP TEAM</h2>
-										<p>トップチーム選手</p>
+										<h2 id="home-top-team-title">OTHER PLAYERS</h2>
+										<p>他の選手を見る</p>
 									</div>
 									<div class="top-team-carousel" data-top-team-carousel>
 										<!-- <button class="top-team-carousel__arrow top-team-carousel__arrow--prev" type="button" aria-label="Previous players">‹</button> -->

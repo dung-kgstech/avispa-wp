@@ -124,7 +124,7 @@ get_header();
         <div class="team_boxes">
             <div class="team_box">
                 <div id="link1" class="anclink"></div>
-                <h2 class="team_boxes_ttl">GK /ゴールキーパー</h2>
+                <h2 class="team_boxes_ttl">DF /ディフェンダー</h2>
                 <?php
                 $players = new WP_Query([
                     'post_type'      => 'player',
@@ -199,7 +199,7 @@ get_header();
         <div class="team_boxes">
             <div class="team_box">
                 <div id="link1" class="anclink"></div>
-                <h2 class="team_boxes_ttl">GK /ゴールキーパー</h2>
+                <h2 class="team_boxes_ttl">MF /ミッドフィルダー</h2>
                 <?php
                 $players = new WP_Query([
                     'post_type'      => 'player',
@@ -274,7 +274,7 @@ get_header();
         <div class="team_boxes">
             <div class="team_box">
                 <div id="link1" class="anclink"></div>
-                <h2 class="team_boxes_ttl">GK /ゴールキーパー</h2>
+                <h2 class="team_boxes_ttl">FW /フォワード</h2>
                 <?php
                 $players = new WP_Query([
                     'post_type'      => 'player',

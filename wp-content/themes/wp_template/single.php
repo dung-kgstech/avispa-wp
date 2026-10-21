@@ -91,7 +91,7 @@ $post_id = get_the_ID();
 											</tr>
 											<tr>
 												<th>身長/体重</th>
-												<td><?php echo esc_html(get_field('player_height_weight', $post_id)); ?></td>
+												<td><?php echo esc_html(get_field('player_height', $post_id)); ?>cm / <?php echo esc_html(get_field('player_weight', $post_id)); ?>kg</td>
 											</tr>
 											<tr>
 												<th>利き足</th>

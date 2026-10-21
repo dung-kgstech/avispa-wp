@@ -59,7 +59,7 @@ get_header();
                     'meta_query'     => [
                         [
                             'key'     => 'position',
-                            'value'   => 'GK',
+                            'value'   => 'GK /ゴールキーパー',
                             'compare' => '=',
                         ],
                     ],
@@ -134,7 +134,7 @@ get_header();
                     'meta_query'     => [
                         [
                             'key'     => 'position',
-                            'value'   => 'DF',
+                            'value'   => 'DF /ディフェンダー',
                             'compare' => '=',
                         ],
                     ],
@@ -209,7 +209,7 @@ get_header();
                     'meta_query'     => [
                         [
                             'key'     => 'position',
-                            'value'   => 'MF',
+                            'value'   => 'MF /ミッドフィルダー',
                             'compare' => '=',
                         ],
                     ],
@@ -280,11 +280,10 @@ get_header();
                     'post_type'      => 'player',
                     'post_status'    => 'publish',
                     'posts_per_page' => -1,
-
                     'meta_query'     => [
                         [
                             'key'     => 'position',
-                            'value'   => 'FW',
+                            'value'   => 'FW /フォワード',
                             'compare' => '=',
                         ],
                     ],

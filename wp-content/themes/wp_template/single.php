@@ -73,8 +73,34 @@ $post_id = get_the_ID();
 
 							<div class="player-profile-section">
 								<div class="profile-block">
-									<h3 class="team-staff-category-title information-category-title pc-profile-title">GK /ゴールキーパー</h3>
-									<h3 class="team-staff-category-title information-category-title mobile-profile-title">GK /ゴールキーパー</h3>
+									<h3 class="team-staff-category-title information-category-title pc-profile-title">
+										<?php
+										$position = get_field('position', $post_id);
+
+										$position_labels = [
+											'GK' => 'GK /ゴールキーパー',
+											'DF' => 'DF /ディフェンダー',
+											'MF' => 'MF /ミッドフィルダー',
+											'FW' => 'FW /フォワード',
+										];
+
+										echo esc_html($position_labels[$position] ?? $position);
+										?>
+									</h3>
+									<h3 class="team-staff-category-title information-category-title mobile-profile-title">
+										<?php
+										$position = get_field('position', $post_id);
+
+										$position_labels = [
+											'GK' => 'GK /ゴールキーパー',
+											'DF' => 'DF /ディフェンダー',
+											'MF' => 'MF /ミッドフィルダー',
+											'FW' => 'FW /フォワード',
+										];
+
+										echo esc_html($position_labels[$position] ?? $position);
+										?>
+									</h3>
 									<table class="player-profile-table">
 										<tbody>
 											<tr>
